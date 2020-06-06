@@ -67,7 +67,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: black;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -6299,7 +6299,7 @@ button.bg-color:focus {
 }
 
 .bg-color {
-  background-color: #fff !important;
+  background-color: black !important;
 }
 
 .bg-transparent {
@@ -10260,7 +10260,7 @@ body {
     padding: 0;
   }
   .masthead h1 {
-    font-size: 6.5rem;
+    font-size: 6rem;
     line-height: 6.5rem;
     letter-spacing: 0.8rem;
   }
