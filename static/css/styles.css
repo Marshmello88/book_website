@@ -6288,17 +6288,17 @@ button.bg-dark:focus {
   background-color: #1d2124 !important;
 }
 
-.bg-black {
-  background-color: #000000 !important;
+.bg-color {
+  background-color: #C6D9A9 !important;
 }
 
-a.bg-black:hover, a.bg-black:focus,
-button.bg-black:hover,
-button.bg-black:focus {
-  background-color: black !important;
+a.bg-color:hover, a.bg-color:focus,
+button.bg-color:hover,
+button.bg-color:focus {
+  background-color: #fff !important;
 }
 
-.bg-white {
+.bg-color {
   background-color: #fff !important;
 }
 
@@ -10228,7 +10228,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/bg-masthead.jpg");
+  background: /*linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%),*/ url("../assets/img/green-leaf-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10307,7 +10307,7 @@ body {
 
 .signup-section {
   padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("../assets/img/bg-signup.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("../assets/img/plants.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10387,12 +10387,22 @@ body {
     visibility: visible;
 }
 
-.loginButton {
+.loginAccount .formRow .btn {
     border-radius: 20px;
     margin-left: 10px;
+    background-color: #fcabab;
+    color: #fff;
 }
 
 .loginAccount .col2-set .col-1 {
     float: left;
     width: 48%;
+}
+
+.accountCol h2 {
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
 }

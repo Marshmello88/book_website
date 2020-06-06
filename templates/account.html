@@ -2,9 +2,9 @@
 {% block content %}
 <header class="masthead">
 	<div class="container d-flex h-100 align-items-center">
-		<div class="mx-auto text-center">
-			<div class="col2-set">
-				<div class="col-1">
+		<div class="mx-auto accountCol">
+			<div class="row">
+				<div class="col-6">
 					<h2> Log In </h2>
 					<form class="loginAccount" action="" method="post">
 
@@ -14,11 +14,32 @@
 							<input type="text" class="" name="username" id="username"  value="{{ request.form.username }}">			</p>
 							<p class="formRow">
 								<label for="password">Password&nbsp;
-<span class="required">*</span></label>
+<span class="required">*</span></label> <br>
 								<input type="password" name="password" value="{{ request.form.password }}"> </p>
 								<p class="formRow>
-						<input class=" btn btn-default loginButton" type="submit" value="Login">
+						<input class="btn btn-default loginButton" type="submit" value="Login">
 									Log In
+								</p>
+					</form>
+					{% if error %}
+					<p class="error"><strong>Error:</strong>
+						{{ error }}
+						{% endif %}
+				</div>
+            
+            				<div class="col-6">
+					<h2> Register </h2>
+					<form class="loginAccount" action="" method="post">
+
+						<p class="formRow">
+							<label for="username">Email address&nbsp; 
+<span class="required">*</span></label> <br>
+							<input type="text" class="" name="username" id="username"  value="{{ request.form.username }}">			</p>
+							<p>A password will be sent to your email address.</p>
+								<p class="formRow>
+						<input class=" btn btn-default loginButton" type="submit" value="Login">
+                        
+									Register
 								</p>
 					</form>
 					{% if error %}
