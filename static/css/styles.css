@@ -2493,6 +2493,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #64a19d;
   border-color: #64a19d;
+  border-radius: 25px;
 }
 .btn-primary:hover {
   color: #fff;
@@ -6289,7 +6290,7 @@ button.bg-dark:focus {
 }
 
 .bg-color {
-  background-color: #CED9BF !important;
+  background-color: /*#CED9BF*/ #fff !important;
 }
 
 a.bg-color:hover, a.bg-color:focus,
@@ -6298,7 +6299,7 @@ button.bg-color:focus {
   background-color: #CED9BF !important;
 }
 
-.bg-color {
+.bg-black {
   background-color: black !important;
 }
 
@@ -7636,10 +7637,10 @@ button.bg-color:focus {
   margin-right: 0 !important;
 }
 
-.mb-0,
+/*.mb-0,
 .my-0 {
   margin-bottom: 0 !important;
-}
+}*/
 
 .ml-0,
 .mx-0 {
@@ -8042,6 +8043,7 @@ button.bg-color:focus {
 .mr-auto,
 .mx-auto {
   margin-right: auto !important;
+  margin-bottom: 9rem;
 }
 
 .mb-auto,
@@ -10260,13 +10262,14 @@ body {
     padding: 0;
   }
   .masthead h1 {
-    font-size: 6rem;
+    font-size: 5.5rem;
+    margin-bottom: 2rem;
     line-height: 6.5rem;
     letter-spacing: 0.8rem;
   }
   .masthead h2 {
     max-width: 30rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
