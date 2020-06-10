@@ -15,6 +15,11 @@ def account():
     return render_template("account.html")
 
 
+@app.route('/shop')
+def shop():
+    return render_template("shop.html")
+    
+
 # Route for handling the login page logic https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/
 @app.route('/login', methods=['GET', 'POST'])
 def login():
