@@ -10459,7 +10459,54 @@ body {
 
 .product-image img {
     max-height: 95%;
-    max-width: 100%;
+    max-width: 100%;    
+    justify-content: center;
+}
+
+.product-stats {
+    background-color: white;
+    padding: 0;
+    order: 2;
+    margin-top: 8px;
+    width: 100%;
+    align-self: flex-end;
+    transition: all 0.4s ease-in-out;
+    z-index: 2;
+    max-height: 0px;
+    overflow: hidden;
+
+}
+
+.product-grid-item__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: calc(100% - 70px);
+    padding: 10px 14px;
+    z-index: 2;
+    transition: all 0.4s ease-in-out;
+    background-color: white;
+    order: 1;
+    max-height: 72px;
+    min-height: 72px;
+}
+
+ .product-info {
+    position: absolute;
+    width: calc(100% - 16px);
+    bottom: 8px;
+    left: 0;
+    margin-left: 8px;
+    margin-bottom: -8px;
+    display: flex;
+    flex-flow: column;
+}
+
+
+.list-item :hover .product-stats {
+    max-height: 200px;
+    margin-bottom: 8px;
 }
 
 /*.wrapper {
