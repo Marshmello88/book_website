@@ -1,6 +1,44 @@
-{% extends 'base.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" />
+	<!-- Font Awesome icons (free version)-->
+	<script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
+</head>
+
+<body id="shop-body">
+	<!-- Navigation-->
+	<nav class="navbar navbar-expand-lg navbar-shop fixed-top" id="mainNav">
+		<div class="container">
+			<a class=" js-scroll-trigger"
+				href="#page-top">Shop</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="#about">About</a></li>
+					<li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="#projects">Projects</a></li>
+					<li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="#signup">Contact</a></li>
+					<li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="{{ url_for('account') }}">Log in</a>
+						
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Masthead-->
+
 <section class="shop-section bg-light">
+
 <div class="shop-wrapper">
 	<ul class="shop-display flex-wrap" id="productrange">
 		<li class="list-item" style="background-color: #F5A2AB;">
@@ -91,8 +129,10 @@
                 </header>
               </div>
 		</li>
+        <!--<div class="bg-plant">
+					<img src="/static/assets/img/watercolor-plant.png">
+              </div>-->
         <li class="list-item">
-
 
 				<div class="product-image">
 							<img src="{{ url_for('static', filename='assets/img/rubber.png') }}">
@@ -257,8 +297,190 @@
                 </header>
               </div>
 		</li>
+        <li class="list-item" style="background-color: #91A880;">
+			<div class="product-image">
+							<img src="{{ url_for('static', filename='assets/img/snake_zeylanica.png') }}">
+              </div>
+<div class="product-info">
+                <ul class="product-stats">
+                    <li><span class="icon" style="background-color: #fff"><i class="far fa-smile-beam"></i> I like to pray at night.</span></li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-tint"></i></span>
+                    <span>
+            I like my soil moist, but not soggy.
+             </span></li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-sun"></i> I don't like direct sunlight!</span>
+                </li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-cat"></i> I'm non-toxic to pets! </span></li>
+                </ul>
+                
+                <header class="product-grid-item__header mt8">
+                  <div class="product-grid-item-title-container">
+                    <span class="subtitle">Calathea Rattlesnake</span>
+                    <h4 class="plantname"><b>Princess Polly</b></h4>
+                  </div>
+                  <span class="price f-bold">
+                    <big>25<sup>95</sup></big>
+                  </span>
+                </header>
+              </div>
+		</li>
+
+        <li class="list-item product-set" style="background-color: #D1D9B6;">
+             
+                <div class="product-set-image">
+							<img src="{{ url_for('static', filename='assets/img/cutiebox.gif') }}">
+              </div>
+                <div class="product-info">
+                  <h4 class="mt0 mb0 title f-bold"><b>Plant Pack: Bright Light</b> <span class="price"><big> 49<sup>95</sup></big></span></h4>
+                  <p class="mt0 mb0"></p><p>Je huis opvrolijken met wat groene huisgenoten én onze kwekers uit de plant helpen? Dat is exact wat dit plantpakket je oplevert!</p>
+<p>Door het sluiten van de grenzen en veel winkels kunnen kweke...</p>
+                </div>
+              
+            </li>
+            	<li class="list-item" style="background-color: #F5E7BA;">
+
+				<div class="product-image">
+					<img src="{{ url_for('static', filename='assets/img/aglaonema_stripes.png') }}">
+              </div>
+<div class="product-info">
+                <ul class="product-stats">
+                    <li><span class="icon" style="background-color: #fff"><i class="far fa-smile-beam"></i> I like to pray at night.</span></li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-tint"></i></span>
+                    <span>
+            I like my soil moist, but not soggy.
+             </span></li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-sun"></i> I don't like direct sunlight!</span>
+                </li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-cat"></i> I'm non-toxic to pets! </span></li>
+                </ul>
+                
+                <header class="product-grid-item__header mt8">
+                  <div class="product-grid-item-title-container">
+                    <span class="subtitle">Calathea Rattlesnake</span>
+                    <h4 class="plantname"><b>Princess Polly</b></h4>
+                  </div>
+                  <span class="price f-bold">
+                    <big>25<sup>95</sup></big>
+                  </span>
+                </header>
+              </div>
+			
+            </li>
+            	<li class="list-item" style="background-color: #F5A2AB;">
+
+				<div class="product-image">
+					<img src="{{ url_for('static', filename='assets/img/pothos_silver_satin.png') }}">
+              </div>
+<div class="product-info">
+                <ul class="product-stats">
+                    <li><span class="icon" style="background-color: #fff"><i class="far fa-smile-beam"></i> I like to pray at night.</span></li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-tint"></i></span>
+                    <span>
+            I like my soil moist, but not soggy.
+             </span></li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-sun"></i> I don't like direct sunlight!</span>
+                </li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-cat"></i> I'm non-toxic to pets! </span></li>
+                </ul>
+                
+                <header class="product-grid-item__header mt8">
+                  <div class="product-grid-item-title-container">
+                    <span class="subtitle">Calathea Rattlesnake</span>
+                    <h4 class="plantname"><b>Princess Polly</b></h4>
+                  </div>
+                  <span class="price f-bold">
+                    <big>25<sup>95</sup></big>
+                  </span>
+                </header>
+              </div>
+			
+            </li>
+            	<li class="list-item">
+
+				<div class="product-image">
+					<img src="{{ url_for('static', filename='assets/img/Purple_Oxalis.png') }}">
+              </div>
+<div class="product-info">
+                <ul class="product-stats">
+                    <li><span class="icon" style="background-color: #fff"><i class="far fa-smile-beam"></i> I like to pray at night.</span></li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-tint"></i></span>
+                    <span>
+            I like my soil moist, but not soggy.
+             </span></li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-sun"></i> I don't like direct sunlight!</span>
+                </li>
+                    <li><span class="icon" style="background-color: #fff"><i class="fas fa-cat"></i> I'm non-toxic to pets! </span></li>
+                </ul>
+                
+                <header class="product-grid-item__header mt8">
+                  <div class="product-grid-item-title-container">
+                    <span class="subtitle">Calathea Rattlesnake</span>
+                    <h4 class="plantname"><b>Princess Polly</b></h4>
+                  </div>
+                  <span class="price f-bold">
+                    <big>25<sup>95</sup></big>
+                  </span>
+                </header>
+              </div>
+			
+            </li>
 	</ul>
 </section>
 
 </div>
-{% endblock %}
+<!-- Contact-->
+	<section class="contact-section bg-offwhite">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-map-marked-alt text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Address</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50">2034LP Street XXX Amsterdam</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-envelope text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Email</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-mobile-alt text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Phone</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50">+31624159080</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="social d-flex justify-content-center">
+				<a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
+					href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
+					href="#!"><i class="fab fa-github"></i></a>
+			</div>
+		</div>
+	</section>
+<!-- Footer-->
+	<footer class="footer bg-offwhite small text-center text-black-50">
+		<div class="container">Copyright © Your Website 2020</div>
+	</footer>
+	<!-- Bootstrap core JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<!-- Third party plugin JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="{{ url_for('static', filename= 'js/scripts.js') }}"></script>
+</body>
+
+</html>
