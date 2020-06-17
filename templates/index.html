@@ -1,22 +1,22 @@
 {% extends 'base.html' %} {% block content %}
 <header class="masthead">
-		<div class="container d-flex h-100 align-items-center">
-			<div class="mx-auto text-center">
-				<h1 class="mx-auto my-0 text-uppercase">Happy:)Plants</h1>
-				<h2 class="text-white-50 mx-auto mt-2 mb-5">Give the Gift of Green</h2>
-				<a class="btn btn-primary js-scroll-trigger" href="/shop">Shop All Plants</a>
-			</div>
+	<div class="container d-flex h-100 align-items-center">
+		<div class="mx-auto text-center">
+			<h1 class="mx-auto my-0 text-uppercase">Happy:)Plants</h1>
+			<h2 class="text-white-50 mx-auto mt-2 mb-5">Give the Gift of Green</h2>
+			<a class="btn btn-primary js-scroll-trigger" href="/shop">Shop All Plants</a>
 		</div>
-	</header>
+	</div>
+</header>
 
 
-	<!-- About-->
-	<section class="about-section text-center" id="about">
-    <div class="about-wrapper">
-	<ul class="shop-display flex-wrap" id="productrange">
+<!-- About-->
+<section class="about-section text-center" id="about">
+	<!--div class="about-wrapper">-->
+	<!--<ul class="container shop-display flex-wrap" id="productrange">
 		<li class="petfriendly-item" style="background-color: #F5A2AB;">
 
-				<div class="petplant-image">
+				<div class=" img-fluid petplant-image">
 					<img src="{{ url_for('static', filename='assets/img/catandplant.jpg') }}">
               </div>
 			
@@ -32,122 +32,139 @@
                 </div>
               
             </li>
-		<!--<div class="container">
-			<div class="row">
-				<div class="col-lg-8 mx-auto">
-					<h2 class="text-black-50 mb-4">Insert various plants here 4</h2>
-					<p class="text-black-50">bleepbloopbleepbloopbleepbloopbleepbloopbleepbloopbleepbloopbleepbloopbleepbloopbleepbloopbleepbloop</p>
+            </ul>-->
+	<div class="container" id="plant-packs">
+		<div class="row justify-content-center no-gutters">
+			<div class="col-lg-4 order-lg-first">
+				<div class="text-beginner-plants text-center text-lg-right">
+					<h4>Plants for Beginners</h4>
+					<p class="text-black-50 mb-0">We put together the perfect mix of some of our favorite easy plants
+						for
+						your convenience. These beginner plants are suitable for beginners who are just starting out
+						with plants
+						or for those who want to keep a low maintenance plants.</p>
+					<a class="button quiz-button" href="/" style="cursor: pointer;">Click here!</a>
 				</div>
-			</div>
-			<img class="img-fluid" />
-            </div>-->
-	</section>
-	<!-- Projects-->
-	<section class="projects-section bg-light" id="projects">
-		<div class="container">
-        <img class="bg-leaf mb-3 mb-lg-0" style="background: transparent;" src="{{ url_for('static', filename='assets/img/watercolor-plant.png')}}" alt="" /></div> <!--<a href='https://pngtree.com/so/healing'>healing png from pngtree.com</a>-->
-			<!-- Featured Project Row-->
-			<div class="row align-items-center no-gutters mb-4 mb-lg-5">
-				<div class="col-xl-8 col-lg-7">
-					<img class="img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='assets/img/plant-care.jpg')}}" alt="" /></div> 
-					<div class="col-xl-4 col-lg-5">
-						<div class="featured-text text-center text-lg-left">
-							<h4>Top Ten Plant Care Tips</h4>
-							<p class="text-black-50 mb-0">There are plenty of ways to care for your plant. With the help of our plant experts, 
-                            we’ve weeded out the Top Ten Tips for healthy, happy plants.</p>
-						</div>
-					</div>
-				</div>
-				<!-- Project One Row-->
-				<div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-					<div class="col-lg-6">
-						<img class="img-fluid" src="{{ url_for('static', filename='assets/img/yellow.jpg')}}" alt="" /></div>
-						<div class="col-lg-6">
-							<div class="bg-color text-center h-100 project">
-								<div class="d-flex h-100">
-									<div class="project-text w-100 my-auto text-center text-lg-left">
-										<h4 class="text-color">Choose the Right Roommate for You!</h4>
-										<p class="mb-0 text-black-50">Take a quiz over here</p>
-                                        <a class="button quiz-button" id="quiz" href="/quiz" style="cursor: pointer;">Take Quiz</a>
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Project Two Row-->
-					<div class="row justify-content-center no-gutters">
-						<div class="col-lg-6">
-							<img class="img-fluid" src="{{ url_for('static', filename='assets/img/lowlightplants.jpg') }}" alt="" /></div>
-							<div class="col-lg-6 order-lg-first">
-								<div class="bg-color text-center h-100 project">
-									<div class="d-flex h-100">
-										<div class="project-text w-100 my-auto text-center text-lg-right">
-											<h4 class="text-black-50"> Do you suffer from a lack of light and not know what plants will survive? </h4>
-											<p class="mb-0 text-black-50">Well, these plants are perfect for you! Sit back and let us get you the perfect plants for your shady corner or dining room table - because every room needs a plant.</p>
-											<hr class="d-none d-lg-block mb-0 mr-0" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-	</section>
-	<!-- Signup-->
-	<section class="signup-section" id="signup">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 signupmargin col-lg-8 text-center">
-					<i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-					<h2 class="text-white-50 h2margin">Get the dirt!</h2>
-					<form class="form-inline d-flex">
-						<input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." /><button class="btn btn-primary signupbtn" type="submit">Subscribe</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Contact-->
-	<section class="contact-section bg-offwhite">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 mb-3 mb-md-0">
-					<div class="card py-4 h-100">
-						<div class="card-body text-center">
-							<i class="fas fa-map-marked-alt text-primary mb-2"></i>
-							<h4 class="text-uppercase m-0">Address</h4>
-							<hr class="my-4" />
-							<div class="small text-black-50">2034LP Street XXX Amsterdam</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 mb-3 mb-md-0">
-					<div class="card py-4 h-100">
-						<div class="card-body text-center">
-							<i class="fas fa-envelope text-primary mb-2"></i>
-							<h4 class="text-uppercase m-0">Email</h4>
-							<hr class="my-4" />
-							<div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 mb-3 mb-md-0">
-					<div class="card py-4 h-100">
-						<div class="card-body text-center">
-							<i class="fas fa-mobile-alt text-primary mb-2"></i>
-							<h4 class="text-uppercase m-0">Phone</h4>
-							<hr class="my-4" />
-							<div class="small text-black-50">+31624159080</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="social d-flex justify-content-center">
-				<a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
-					href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
-					href="#!"><i class="fab fa-github"></i></a>
-			</div>
-		</div>
-	</section>
-         {% endblock %}
 
+			</div>
+			<div class="col-lg-8">
+				<img class="img-fluid" src="{{ url_for('static', filename='assets/img/low-maintenance.jpg') }}">
+
+              </div>
+
+			</div>
+
+		</div>
+</section>
+<!-- Projects-->
+<section class="projects-section bg-light" id="projects">
+
+	<!-- Featured Project Row-->
+	<div class="row align-items-center no-gutters mb-4 mb-lg-5">
+		<div class="col-xl-8 col-lg-7">
+			<img class="img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='assets/img/plant-care.jpg')}}" alt="" /></div>
+			<div class="col-xl-4 col-lg-5">
+				<div class="featured-text text-center text-lg-left">
+					<h4>Top Ten Plant Care Tips</h4>
+					<p class="text-black-50 mb-0">There are plenty of ways to care for your plant. With the help of our
+						plant experts,
+						we’ve weeded out the Top Ten Tips for healthy, happy plants.</p>
+				</div>
+			</div>
+		</div>
+		<!-- Project One Row-->
+		<div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+			<div class="col-lg-6">
+				<img class="img-fluid" src="{{ url_for('static', filename='assets/img/yellow.jpg')}}" alt="" /></div>
+				<div class="col-lg-6">
+					<div class="bg-color text-center h-100 project">
+						<div class="d-flex h-100">
+							<div class="project-text w-100 my-auto text-center text-lg-left">
+								<h4 class="text-color">Choose the Right Roommate for You!</h4>
+								<p class="mb-0 text-black-50">Take a quiz over here</p>
+								<a class="button quiz-button" id="quiz" href="/quiz" style="cursor: pointer;">Take
+									Quiz</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Project Two Row-->
+			<div class="row justify-content-center no-gutters">
+				<div class="col-lg-6">
+					<img class="img-fluid" src="{{ url_for('static', filename='assets/img/lowlightplants.jpg') }}" alt="" /></div>
+					<div class="col-lg-6 order-lg-first">
+						<div class="bg-color text-center h-100 project">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-right">
+									<h4 class="text-black-50"> Do you suffer from a lack of light and not know what
+										plants will survive? </h4>
+									<p class="mb-0 text-black-50">Well, these plants are perfect for you! Sit back and
+										let us get you the perfect plants for your shady corner or dining room table -
+										because every room needs a plant.</p>
+									<hr class="d-none d-lg-block mb-0 mr-0" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</section>
+<!-- Signup-->
+<section class="signup-section" id="signup">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 signupmargin col-lg-8 text-center">
+				<i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+				<h2 class="text-white-50 h2margin">Get the dirt!</h2>
+				<form class="form-inline d-flex">
+					<input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." /><button class="btn btn-primary signupbtn" type="submit">Subscribe</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Contact-->
+<section class="contact-section bg-offwhite">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 mb-3 mb-md-0">
+				<div class="card py-4 h-100">
+					<div class="card-body text-center">
+						<i class="fas fa-map-marked-alt text-primary mb-2"></i>
+						<h4 class="text-uppercase m-0">Address</h4>
+						<hr class="my-4" />
+						<div class="small text-black-50">2034LP Street XXX Amsterdam</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 mb-3 mb-md-0">
+				<div class="card py-4 h-100">
+					<div class="card-body text-center">
+						<i class="fas fa-envelope text-primary mb-2"></i>
+						<h4 class="text-uppercase m-0">Email</h4>
+						<hr class="my-4" />
+						<div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 mb-3 mb-md-0">
+				<div class="card py-4 h-100">
+					<div class="card-body text-center">
+						<i class="fas fa-mobile-alt text-primary mb-2"></i>
+						<h4 class="text-uppercase m-0">Phone</h4>
+						<hr class="my-4" />
+						<div class="small text-black-50">+31624159080</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="social d-flex justify-content-center">
+			<a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
+				href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
+				href="#!"><i class="fab fa-github"></i></a>
+		</div>
+	</div>
+</section>
+{% endblock %}
