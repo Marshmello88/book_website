@@ -2,7 +2,7 @@
 /*!
 * source: Grayscale v6.0.1 (https://startbootstrap.com/themes/grayscale) */
 
-:root {
+/*:root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -32,7 +32,7 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+}*/
 
 *,
 *::before,
@@ -287,7 +287,7 @@ input[type=checkbox] {
 }
 
 #shop-body {
-    background-color: #f2f0ef;
+    background-color: /*#f2f0ef;*/ #fff;
 }
 
 textarea {
@@ -10393,12 +10393,13 @@ body {
 
 /*.bg-plant {
     position: absolute;
-    height: 50%
+    height: 50%*/
 
 
-/*.shop-section {
+.shop-section {
     position: relative;
-}*/
+    padding-top: 3rem;
+}
 
 .product-set {
     width: calc(66.666% - 30px);
@@ -10481,4 +10482,77 @@ body {
 
 #plant-packs {
     padding:0;
+}
+
+/* plant care */
+
+.plantcare-section {
+margin-top: 9rem;
+}
+
+ .care {
+ /*background: url("../assets/img/plant-care.jpg");*/
+  text-align: center;
+    display: flex;
+    align-items:center;
+    width: 100%;
+    padding-bottom: 10rem;
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;
+    background-size: cover;
+    margin: 0px 0px 16px 0px;*/
+    padding: 0 13%;
+}
+
+.care img {
+    max-width:100%;
+    height:auto;
+}
+
+#page-plantcare {
+    margin: 0;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: white;
+}
+
+.nav-link-plantcare {
+ padding: 2rem 1.5rem;
+ text-decoration: none;
+}
+
+.navbar-brand-plantcare {
+    padding: 0.5rem 0;
+}
+
+.articleform {
+    padding: 0 30%;
+    margin-top: 3rem; 
+    padding-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 4.75rem;
+    line-height: 1.1;
+    padding: 0 20%;
+}
+
+.section-subtitle {
+    padding: 0 20%;
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.leafy-bg {
+    background-image: url("../assets/img/leafy-bg-2.png"),url("../assets/img/bg-leaf.png");
+}
+
+.articleform {
+    background-repeat: no-repeat;
+    background-size: 350px,400px;
+    background-position: 110% 10%,-10% 100%;
 }

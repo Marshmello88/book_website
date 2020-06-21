@@ -128,4 +128,6 @@ src="{{ url_for('static', filename='assets/img/pink.jpg')}}" alt=""
 </div></div>
 
 
-
+#F5A2AB
+b
+#F5C0AE

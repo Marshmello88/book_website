@@ -15,6 +15,11 @@ def account():
     return render_template("account.html")
 
 
+@app.route('/plantcare')
+def plantcare():
+    return render_template("plantcare.html")
+
+
 @app.route('/shop')
 def shop():
     return render_template("shop.html")
