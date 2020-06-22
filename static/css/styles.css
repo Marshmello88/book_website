@@ -10380,6 +10380,10 @@ body {
         display: flex !important;
 }
 
+.smiley {
+font-size: 30px;
+}
+
 .list-item {
     position: relative;
     width: calc(33.333% - 30px);
