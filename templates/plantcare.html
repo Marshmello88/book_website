@@ -18,185 +18,226 @@
 </head>
 
 <body id="page-plantcare">
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand-plantcare js-scroll-trigger" href="#page-top">Happy◕ ◡ ◕Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<svg class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg><!-- <i class="fas fa-bars"></i> --></button>
+			<a class="navbar-brand-plantcare js-scroll-trigger" href="/">Happy◕ ◡
+				◕Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<svg class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg><!-- <i class="fas fa-bars"></i> --></button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger" href="#about">About</a></li>
-					<li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger" href="#projects">Projects</a></li>
+					<li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger" href="/shop">Shop</a></li>
 					<li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger" href="#signup">Contact</a></li>
-					<li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger" href="/account">Log in</a>
-						
+					<li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger"
+							href="{{ url_for('account') }}"><i class="fas fa-user"></i></a></li>
+					<li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger"
+							href=""><i class="fas fa-shopping-cart"></i></a>
+
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-<section class="plantcare-section bg-light">
-	<article role="article">
-		<header role="banner">
-			<h1 class="section-title text-center">Top Ten Plant Care Tips</h1>
-			<h2 class="section-subtitle text-center">There are plenty of ways to care for your plant. With the help of
-				our plant experts,
-				we’ve weeded out the Top Ten Tips for healthy, happy plants.</h2>
-			<div class="care">
-            <img src="{{ url_for('static', filename='assets/img/plant-care.jpg') }}"> </div>
-		</header>
-		<div class="articleform leafy-bg">
-			<h6 class="hide">There are plenty of ways to care for your plant. With the help of our plant experts, we’ve
-				weeded out the Top Ten Tips for healthy, happy plants.</h6>
-			<h5>1.​ ​Choose Plants Based on Light in your Space</h5>
-			<p>Are the plants you love the ones you can have? The​ available <a
-					href="https://www.thesill.com/blogs/the-basics/lighten-up">light</a> in your space will help you
-				decide. Check the direction your windows are facing; south-facing windows give bright light,
-				east/west-facing windows give moderate light and north-facing windows give low light. Most houseplants
-				prefer bright, indirect sunlight.</p>
-			<p>If the sun is intense through your windows, add a lovely sheer curtain to diffuse the light. Cacti and
-				some succulents like aloe can of course handle brighter, direct sunlight. You don’t want to overexpose
-				or underexpose any plant. They need the right amount of light to live.</p>
-			<h5>2.​ Figure Out Your Plant Compatibility</h5>
-			<p><a href="https://www.thesill.com/collections/plants-for-beginners">New to plant parenthood</a>? A busy
-				​work schedule, social​ ​life and general forgetfulness can lead to unintentional plant neglect. It’s
-				okay. Some plants can handle that kind of lifestyle. A jetsetter like yourself will enjoy the resilience
-				of low-maintenance <a href="https://www.thesill.com/collections/succulents">succulents</a>, <a
-					href="https://www.thesill.com/products/zz-plant">ZZ plants</a> or <a
-					href="https://www.thesill.com/products/snake-plant-zeylanica">snake plants</a>, all pretty low key,
-				as long as they have enough light (bright and low light respectively). These should keep looking their
-				best when you return from your next trip.</p>
-			<p>If you’ve got more time, you can try a few attention-loving <a
-					href="https://www.thesill.com/products/air-plant-assortment">air plants</a>, orchids or <a
-					href="https://www.thesill.com/products/birds-nest-fern">ferns</a>. Like a mist for the face, an
-				extra spritz of filtered water daily between waterings keeps humidity levels nice and balanced for these
-				delicate plants.</p>
-			<h5>3.​ ​Less (Water) Is More</h5>
-			<p>It’s better to <a href="https://www.thesill.com/blogs/the-basics/drink-up">under water</a> your plants
-				than to overwater. Too much water can lead to root rot. Ditch your water schedule and water your plant
-				only when it needs it. Check the soil first to make sure it’s dry at least 2 inches deep below the
-				surface. If your soil looks dark in color, feels moist, and sticks to your finger, your plant has enough
-				water to do it’s thing for now.</p>
-			<p>How often you water will also change throughout the year. Plants need less water in the <a
-					href="https://www.thesill.com/blogs/seasonal/seasonal-care-winter">winter</a>, when they’re growing
-				slower, the days are shorter and sunlight is less intense. If the heat is on and the soil is drying
-				quicker, they may need a bit more water. Wilting leaves or soil that looks pulled away from the sides of
-				the planter are signs of a thirsty plant.</p>
-			<p>Always use warm water because it absorbs best. Pour water directly on the soil around the base of the
-				plant, because plants absorb water from their roots. The only exception here is Epiphytes, like air
-				plants, who need water on their leaves as well.</p>
-			<p>Place a saucer under your planter. When you water, let it soak in for a few hours, then toss any water
-				that’s left on the saucer. If no water is left over, give the soil another soak.</p>
-			<h5>4.​ ​Raise the Humidity Levels</h5>
-			<p>Staying true to your <a href="https://www.thesill.com/blogs/the-basics/eligible-environments">plants
-					natural environment</a> will help your plant thrive indoors. Most tropical plants, ferns and orchids
-				prefer high humidity and bright to moderate, indirect light. Mist these plants in between waterings with
-				filtered water. During the dry months of winter, grouping similar plants together helps to create a more
-				humid microclimate. A humidifier can help too and it’s great for humans. On the other hand, most desert
-				dwellers, like cacti, prefer dry air and bright, direct light with no shade at all. They definitely
-				don’t need to be misted and don’t care for humidity all that much.</p>
-			<h5>5.​ ​A Note on Stability</h5>
-			<p>Keep​ ​your​ ​plant’s​ ​home environment as stable as possible. Extreme changes can stress plants out.
-				Keep the temperature between 65 and 75 degrees F. Avoid placing your plants near radiators, A/C units
-				and forced-air vents, which can create hot or cold drafts.</p>
-			<h5>6.​ ​Skip The Fertilizer</h5>
-			<p>It’s fine ​​​to​ ​skip the <a
-					href="https://www.thesill.com/blogs/care-miscellaneous/plant-care-fertilizer">fertilizer</a>. Too
-				much fertilizer can do more harm than good. Houseplants tend to not need fertilizer as often as outdoor
-				plants do. If you do choose to fertilize your plant, it’s best to do so during the growing season (early
-				spring to early fall) and follow the general rule of thumb: ‘less is more’. Most store-​bought
-				fertilizers should be diluted with water before use.</p>
-			<p>If you have had your plant for at least year, you can fertilize it for the first time. We suggest using
-				an all-purpose fertilizer. Always follow the instructions. If you’ve just changed the soil, skip the
-				fertilizer. Fresh soil has enough new nutrients.</p>
-			<h5>7.​ ​Find A Reliable Dealer</h5>
-			<p>Purchase​ ​your ​plants ​from​ ​a​ ​reputable​ ​source like The Sill! Stick with local nurseries, your
-				local garden center, and specialty stores or florists. Purchasing from a source with plant experts
-				on-site means they can answer all your questions. Most people who sell or work with plants love talking
-				about them. We definitely do.</p>
-			<p>Avoid large department stores and supermarkets where plants are usually stored in basements or dark
-				warehouses. <a href="https://www.thesill.com/pages/common-plant-care-questions#color">Check your plant
-					out</a> for yellow leaves, powdery mildew, strange spots, brown tips and weak stems as these are
-				signs of an unhealthy plant. Go for green.</p>
-			<h5>8.​ Show A Little TLC</h5>
-			<p>Friendships are fragile. You and your plant need time to adjust co-existing. Show your plant a little
-				extra attention starting out. Observing your plant will tell you when to water and when to not, if the
-				temperature is too high or too low, and if it’s getting enough sun. Plus they’re so pleasing to look at.
-			</p>
-			<h5>9.​ ​Don’t Be Scared to Repot</h5>
-			<p>A common misconception – <a
-					href="https://www.thesill.com/blogs/care-miscellaneous/plant-care-repotting">repotting</a> does not
-				necessarily mean putting your plant in a new planter, but rather, changing out your plant’s soil with <a
-					href="https://www.thesill.com/products/potting-mix-plants">fresh potting mix</a>. New plants should
-				be repotted at some point and given fresh soil, as they are not meant to live in the plastic containers
-				that they are usually sold in, and are often overgrown, plus a new planter could really tie the room
-				together. Choose a planter only 1 to 3 inches larger than its current container. The idea is that your
-				plant is not swimming in soil, which may lead you to overwater. Keep it tight.</p>
-			<h5>10.​ ​Let it Flow</h5>
-			<p>When you move your plant to a new, larger <a href="https://www.thesill.com/collections/pots">planter</a>,
-				whether it’s terra cotta, ceramic, or fiber glass, make sure it has drainage, a fancy word for “hole at
-				the bottom”. This will prevent overwatering as any excess water will have a place to flow. Get a saucer
-				or tray and place it underneath to avoid a wet floor or window sill.</p>
-			<p>You can get DIY and make your own drainage by lining the bottom of your planter with rocks to create
-				crevices for the water to drain into. Here at The Sill, we use <a
-					href="https://www.thesill.com/products/lava-rocks-plant-supplies">lava rocks</a> because they’re
-				porous.</p>
-		</div>
-	</article>
-</section>
-<!-- Signup-->
-<section class="signup-section" id="signup">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 signupmargin col-lg-8 text-center">
-				<i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-				<h2 class="text-white-50 h2margin">Get the dirt!</h2>
-				<form class="form-inline d-flex">
-					<input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." /><button class="btn btn-primary signupbtn" type="submit">Subscribe</button>
-				</form>
+	<section class="plantcare-section bg-light">
+		<article role="article">
+			<header role="banner">
+				<h1 class="section-title text-center">Top Ten Plant Care Tips</h1>
+				<h2 class="section-subtitle text-center">There are plenty of ways to care for your plant. With the help
+					of
+					our plant experts,
+					we’ve weeded out the Top Ten Tips for healthy, happy plants.</h2>
+				<div class="care">
+					<img src="{{ url_for('static', filename='assets/img/plant-care.jpg') }}"> </div>
+			</header>
+			<div class="articleform leafy-bg">
+				<h6 class="hide">There are plenty of ways to care for your plant. With the help of our plant experts,
+					we’ve
+					weeded out the Top Ten Tips for healthy, happy plants.</h6>
+				<h5>1.​ ​Choose Plants Based on Light in your Space</h5>
+				<p>Are the plants you love the ones you can have? The​ available <a
+						href="https://www.thesill.com/blogs/the-basics/lighten-up">light</a> in your space will help you
+					decide. Check the direction your windows are facing; south-facing windows give bright light,
+					east/west-facing windows give moderate light and north-facing windows give low light. Most
+					houseplants
+					prefer bright, indirect sunlight.</p>
+				<p>If the sun is intense through your windows, add a lovely sheer curtain to diffuse the light. Cacti
+					and
+					some succulents like aloe can of course handle brighter, direct sunlight. You don’t want to
+					overexpose
+					or underexpose any plant. They need the right amount of light to live.</p>
+				<h5>2.​ Figure Out Your Plant Compatibility</h5>
+				<p><a href="https://www.thesill.com/collections/plants-for-beginners">New to plant parenthood</a>? A
+					busy
+					​work schedule, social​ ​life and general forgetfulness can lead to unintentional plant neglect.
+					It’s
+					okay. Some plants can handle that kind of lifestyle. A jetsetter like yourself will enjoy the
+					resilience
+					of low-maintenance <a href="https://www.thesill.com/collections/succulents">succulents</a>, <a
+						href="https://www.thesill.com/products/zz-plant">ZZ plants</a> or <a
+						href="https://www.thesill.com/products/snake-plant-zeylanica">snake plants</a>, all pretty low
+					key,
+					as long as they have enough light (bright and low light respectively). These should keep looking
+					their
+					best when you return from your next trip.</p>
+				<p>If you’ve got more time, you can try a few attention-loving <a
+						href="https://www.thesill.com/products/air-plant-assortment">air plants</a>, orchids or <a
+						href="https://www.thesill.com/products/birds-nest-fern">ferns</a>. Like a mist for the face, an
+					extra spritz of filtered water daily between waterings keeps humidity levels nice and balanced for
+					these
+					delicate plants.</p>
+				<h5>3.​ ​Less (Water) Is More</h5>
+				<p>It’s better to <a href="https://www.thesill.com/blogs/the-basics/drink-up">under water</a> your
+					plants
+					than to overwater. Too much water can lead to root rot. Ditch your water schedule and water your
+					plant
+					only when it needs it. Check the soil first to make sure it’s dry at least 2 inches deep below the
+					surface. If your soil looks dark in color, feels moist, and sticks to your finger, your plant has
+					enough
+					water to do it’s thing for now.</p>
+				<p>How often you water will also change throughout the year. Plants need less water in the <a
+						href="https://www.thesill.com/blogs/seasonal/seasonal-care-winter">winter</a>, when they’re
+					growing
+					slower, the days are shorter and sunlight is less intense. If the heat is on and the soil is drying
+					quicker, they may need a bit more water. Wilting leaves or soil that looks pulled away from the
+					sides of
+					the planter are signs of a thirsty plant.</p>
+				<p>Always use warm water because it absorbs best. Pour water directly on the soil around the base of the
+					plant, because plants absorb water from their roots. The only exception here is Epiphytes, like air
+					plants, who need water on their leaves as well.</p>
+				<p>Place a saucer under your planter. When you water, let it soak in for a few hours, then toss any
+					water
+					that’s left on the saucer. If no water is left over, give the soil another soak.</p>
+				<h5>4.​ ​Raise the Humidity Levels</h5>
+				<p>Staying true to your <a href="https://www.thesill.com/blogs/the-basics/eligible-environments">plants
+						natural environment</a> will help your plant thrive indoors. Most tropical plants, ferns and
+					orchids
+					prefer high humidity and bright to moderate, indirect light. Mist these plants in between waterings
+					with
+					filtered water. During the dry months of winter, grouping similar plants together helps to create a
+					more
+					humid microclimate. A humidifier can help too and it’s great for humans. On the other hand, most
+					desert
+					dwellers, like cacti, prefer dry air and bright, direct light with no shade at all. They definitely
+					don’t need to be misted and don’t care for humidity all that much.</p>
+				<h5>5.​ ​A Note on Stability</h5>
+				<p>Keep​ ​your​ ​plant’s​ ​home environment as stable as possible. Extreme changes can stress plants
+					out.
+					Keep the temperature between 65 and 75 degrees F. Avoid placing your plants near radiators, A/C
+					units
+					and forced-air vents, which can create hot or cold drafts.</p>
+				<h5>6.​ ​Skip The Fertilizer</h5>
+				<p>It’s fine ​​​to​ ​skip the <a
+						href="https://www.thesill.com/blogs/care-miscellaneous/plant-care-fertilizer">fertilizer</a>.
+					Too
+					much fertilizer can do more harm than good. Houseplants tend to not need fertilizer as often as
+					outdoor
+					plants do. If you do choose to fertilize your plant, it’s best to do so during the growing season
+					(early
+					spring to early fall) and follow the general rule of thumb: ‘less is more’. Most store-​bought
+					fertilizers should be diluted with water before use.</p>
+				<p>If you have had your plant for at least year, you can fertilize it for the first time. We suggest
+					using
+					an all-purpose fertilizer. Always follow the instructions. If you’ve just changed the soil, skip the
+					fertilizer. Fresh soil has enough new nutrients.</p>
+				<h5>7.​ ​Find A Reliable Dealer</h5>
+				<p>Purchase​ ​your ​plants ​from​ ​a​ ​reputable​ ​source like The Sill! Stick with local nurseries,
+					your
+					local garden center, and specialty stores or florists. Purchasing from a source with plant experts
+					on-site means they can answer all your questions. Most people who sell or work with plants love
+					talking
+					about them. We definitely do.</p>
+				<p>Avoid large department stores and supermarkets where plants are usually stored in basements or dark
+					warehouses. Check your plant
+						out for yellow leaves, powdery mildew, strange spots, brown tips and weak stems as these are
+					signs of an unhealthy plant. Go for green.</p>
+				<h5>8.​ Show A Little TLC</h5>
+				<p>Friendships are fragile. You and your plant need time to adjust co-existing. Show your plant a little
+					extra attention starting out. Observing your plant will tell you when to water and when to not, if
+					the
+					temperature is too high or too low, and if it’s getting enough sun. Plus they’re so pleasing to look
+					at.
+				</p>
+				<h5>9.​ ​Don’t Be Scared to Repot</h5>
+				<p>A common misconception – <a
+						href="https://www.thesill.com/blogs/care-miscellaneous/plant-care-repotting">repotting</a> does
+					not
+					necessarily mean putting your plant in a new planter, but rather, changing out your plant’s soil
+					with <a href="https://www.thesill.com/products/potting-mix-plants">fresh potting mix</a>. New plants
+					should
+					be repotted at some point and given fresh soil, as they are not meant to live in the plastic
+					containers
+					that they are usually sold in, and are often overgrown, plus a new planter could really tie the room
+					together. Choose a planter only 1 to 3 inches larger than its current container. The idea is that
+					your
+					plant is not swimming in soil, which may lead you to overwater. Keep it tight.</p>
+				<h5>10.​ ​Let it Flow</h5>
+				<p>When you move your plant to a new, larger <a
+						href="https://www.thesill.com/collections/pots">planter</a>,
+					whether it’s terra cotta, ceramic, or fiber glass, make sure it has drainage, a fancy word for “hole
+					at
+					the bottom”. This will prevent overwatering as any excess water will have a place to flow. Get a
+					saucer
+					or tray and place it underneath to avoid a wet floor or window sill.</p>
+				<p>You can get DIY and make your own drainage by lining the bottom of your planter with rocks to create
+					crevices for the water to drain into. Here at The Sill, we use <a
+						href="https://www.thesill.com/products/lava-rocks-plant-supplies">lava rocks</a> because they’re
+					porous.</p>
+			</div>
+		</article>
+	</section>
+	<!-- Signup-->
+	<section class="signup-section" id="signup">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 signupmargin col-lg-8 text-center">
+					<i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+					<h2 class="text-white-50 h2margin">Get the dirt!</h2>
+					<form class="form-inline d-flex">
+						<input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." /><button class="btn btn-primary signupbtn" type="submit">Subscribe</button>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<!-- Contact-->
-<section class="contact-section bg-offwhite">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 mb-3 mb-md-0">
-				<div class="card py-4 h-100">
-					<div class="card-body text-center">
-						<i class="fas fa-map-marked-alt text-primary mb-2"></i>
-						<h4 class="text-uppercase m-0">Address</h4>
-						<hr class="my-4" />
-						<div class="small text-black-50">2034LP Street XXX Amsterdam</div>
+	</section>
+	<!-- Contact-->
+	<section class="contact-section bg-offwhite">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-map-marked-alt text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Address</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50">2034LP Street XXX Amsterdam</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-envelope text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Email</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-mobile-alt text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Phone</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50">+31624159080</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 mb-3 mb-md-0">
-				<div class="card py-4 h-100">
-					<div class="card-body text-center">
-						<i class="fas fa-envelope text-primary mb-2"></i>
-						<h4 class="text-uppercase m-0">Email</h4>
-						<hr class="my-4" />
-						<div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 mb-3 mb-md-0">
-				<div class="card py-4 h-100">
-					<div class="card-body text-center">
-						<i class="fas fa-mobile-alt text-primary mb-2"></i>
-						<h4 class="text-uppercase m-0">Phone</h4>
-						<hr class="my-4" />
-						<div class="small text-black-50">+31624159080</div>
-					</div>
-				</div>
+			<div class="social d-flex justify-content-center">
+				<a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
+					href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
+					href="#!"><i class="fab fa-github"></i></a>
 			</div>
 		</div>
-		<div class="social d-flex justify-content-center">
-			<a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
-				href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
-				href="#!"><i class="fab fa-github"></i></a>
-		</div>
-	</div>
-</section>
+	</section>
 </body>>

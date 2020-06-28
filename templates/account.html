@@ -17,7 +17,7 @@
 <span class="required">*</span></label> <br>
 								<input type="password" name="password" value="{{ request.form.password }}"> </p>
 								<p class="formRow>
-						<input class="btn btn-default loginButton" type="submit" value="Login">
+						<input class=" btn btn-default loginButton" type="submit" value="Login">
 									Log In
 								</p>
 					</form>
@@ -26,8 +26,8 @@
 						{{ error }}
 						{% endif %}
 				</div>
-            
-            				<div class="col-6">
+
+				<div class="col-6">
 					<h2> Register </h2>
 					<form class="loginAccount" action="" method="post">
 
@@ -36,11 +36,11 @@
 <span class="required">*</span></label> <br>
 							<input type="text" class="" name="username" id="username"  value="{{ request.form.username }}">			</p>
 							<p>A password will be sent to your email address.</p>
-								<p class="formRow>
+							<p class="formRow>
 						<input class=" btn btn-default loginButton" type="submit" value="Login">
-                        
-									Register
-								</p>
+
+								Register
+							</p>
 					</form>
 					{% if error %}
 					<p class="error"><strong>Error:</strong>
