@@ -1,55 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-<header class="masthead">
-	<div class="container d-flex h-100 align-items-center">
-		<div class="mx-auto accountCol">
-			<div class="row">
-				<div class="col-6">
-					<h2> Log In </h2>
-					<form class="loginAccount" action="" method="post">
 
-						<p class="formRow">
-							<label for="username">Username or email address&nbsp;
-<span class="required">*</span></label><br>
-							<input  class="form-control" type="text" class="" name="username" id="username"  value="{{ request.form.username }}">			</p>
-							<p class="formRow">
-								<label for="password">Password&nbsp;
-<span class="required">*</span></label> <br>
-								<input class="form-control" type="password" name="password" value="{{ request.form.password }}"> </p>
-	
-                    <button class="btn btn-default login-button" value="Login" type="submit">Sign in</button> <br> 
-                    <p class="join-footer"> New here? <a href="/register">Join</a></p>
-					</form>
-					{% if error %}
-					<p class="error"><strong>Error:</strong>
-						{{ error }}
-						{% endif %}
-				</div>
 
-				<!--<div class="col-6">
-					<h2> Register </h2>
-					<form class="loginAccount" action="" method="post">
+<body>
+<section class="masthead" id="register-page">
+<div class="container d-flex h-100 align-items-center">
+<form action="/register" method="POST" onsubmit="return validate()">
+    <p>Email: <input type="email" name="email"></p>
 
-						<p class="formRow">
-							<label for="username">Email address&nbsp; 
-<span class="required">*</span></label> <br>
-							<input type="text" class="" name="username" id="username"  value="{{ request.form.username }}">			</p>
-							<p>A password will be sent to your email address.</p>
-							<p class="formRow>
-						<input class=" btn btn-default loginButton" type="submit" value="Login">
+    <P>Password: <input type="password" name="password" id="password" required></p>
 
-								<a href="/register">Register here</a>
-							</p>
-					</form>-->
-					{% if error %}
-					<p class="error"><strong>Error:</strong>
-						{{ error }}
-						{% endif %}
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
+    <p>Confirm Password: <input type="password" name="cpassword" id="cpassword"></p>
+
+    <p>Username: <input type="text" name="username"></p>
+
+    <p><input type="submit" value="Register"></p>
+
+    <a href="/loginForm">Login here</a>
+</form>
+</div>
+</section>
 <!-- Signup-->
 <section class="signup-section" id="signup">
 	<div class="container">
@@ -106,5 +76,9 @@
 		</div>
 	</div>
 </section>
+</body>
+</html>
+
 
 {% endblock %}
+
