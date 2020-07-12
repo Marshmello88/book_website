@@ -2,83 +2,89 @@
 {% block content %}
 
 
-<body>
-<section class="masthead" id="register-page">
-<div class="container d-flex h-100 align-items-center">
-<form action="/register" method="POST" onsubmit="return validate()">
-    <p>Email: <input type="email" name="email"></p>
+<header class="masthead">
+	<div class="container d-flex h-100 align-items-center">
+		<div class="mx-auto accountCol">
+			<div class="row">
+				<div class="col-6">
+                    <h2> Register </h2>
 
-    <P>Password: <input type="password" name="password" id="password" required></p>
+						<form action="/register" method="POST" onsubmit="return validate()">
+                            <label for="username">Username or E-mail&nbsp;<span class="required-reg">*</span></label><br> 
+							<input type="text" name="username"></p>
+							<label for="username">Password&nbsp;<span class="required-reg">*</span></label><br>
+                            <input type="password" name="password" id="password" class="required-reg"> <br><br>
+                            <label for="username">Confirm Password&nbsp;<span class="required-reg">*</span></label><br> 
+							<input type="password" name="cpassword" id="cpassword"> <br><br>
+                            
 
-    <p>Confirm Password: <input type="password" name="cpassword" id="cpassword"></p>
+									<!--<p><input type="submit" value="Register"></p>-->
+                                        <button class="btn btn-default login-button" value="Register" type="submit">Register</button> <br> <br>
 
-    <p>Username: <input type="text" name="username"></p>
 
-    <p><input type="submit" value="Register"></p>
-
-    <a href="/loginForm">Login here</a>
-</form>
-</div>
-</section>
-<!-- Signup-->
-<section class="signup-section" id="signup">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 signupmargin col-lg-8 text-center">
-				<i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-				<h2 class="text-white-50 h2margin">Get the dirt!</h2>
-				<form class="form-inline d-flex">
-					<input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." /><button class="btn btn-primary signupbtn" type="submit">Subscribe</button>
-				</form>
+											<p> Or you can <a href="/account">Log in here</a></p>
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+	</section>
+	<!-- Signup-->
+	<section class="signup-section" id="signup">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 signupmargin col-lg-8 text-center">
+					<i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+					<h2 class="text-white-50 h2margin">Get the dirt!</h2>
+					<form class="form-inline d-flex">
+						<input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." /><button class="btn btn-primary signupbtn" type="submit">Subscribe</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact-->
+	<section class="contact-section bg-offwhite">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-map-marked-alt text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Address</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50">2034LP Street XXX Amsterdam</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-envelope text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Email</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100">
+						<div class="card-body text-center">
+							<i class="fas fa-mobile-alt text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0">Phone</h4>
+							<hr class="my-4" />
+							<div class="small text-black-50">+31624159080</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="social d-flex justify-content-center">
+				<a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
+					href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
+					href="#!"><i class="fab fa-github"></i></a>
 			</div>
 		</div>
 	</div>
-</section>
-<!-- Contact-->
-<section class="contact-section bg-offwhite">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 mb-3 mb-md-0">
-				<div class="card py-4 h-100">
-					<div class="card-body text-center">
-						<i class="fas fa-map-marked-alt text-primary mb-2"></i>
-						<h4 class="text-uppercase m-0">Address</h4>
-						<hr class="my-4" />
-						<div class="small text-black-50">2034LP Street XXX Amsterdam</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 mb-3 mb-md-0">
-				<div class="card py-4 h-100">
-					<div class="card-body text-center">
-						<i class="fas fa-envelope text-primary mb-2"></i>
-						<h4 class="text-uppercase m-0">Email</h4>
-						<hr class="my-4" />
-						<div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 mb-3 mb-md-0">
-				<div class="card py-4 h-100">
-					<div class="card-body text-center">
-						<i class="fas fa-mobile-alt text-primary mb-2"></i>
-						<h4 class="text-uppercase m-0">Phone</h4>
-						<hr class="my-4" />
-						<div class="small text-black-50">+31624159080</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="social d-flex justify-content-center">
-			<a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
-				href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
-				href="#!"><i class="fab fa-github"></i></a>
-		</div>
-	</div>
-</section>
-</body>
-</html>
-
+</header>
 
 {% endblock %}
-
