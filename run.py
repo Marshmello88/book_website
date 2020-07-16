@@ -14,10 +14,16 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    if 'username' in session:
-        return 'You are logged in as ' + session['username']
+    username = session['username']
+    
+    return render_template('index.html', username=username)
 
-    return render_template('index.html')
+    #if 'username' in session:
+        #return 'You are logged in as ' + session['username']
+
+    #return render_template('index.html')
+
+   
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -37,7 +43,7 @@ def register():
     if request.method == 'POST':
         users = mongo.db.users
         existing_user = users.find_one({'name' : request.form['username']}) # search within collection users whether there is no double
- # looking for a name where a name is same as the username from our form
+ 
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt()) #not storing plaintext but storing hash version of it so more secure
             users.insert({'name' : request.form['username'], 'password' : hashpass}) #insert everything to users collection
@@ -49,9 +55,12 @@ def register():
     return render_template('register.html')
 
 
-#@app.route('/register')
-#def register():
- #   return render_template("register.html")
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
+
 
 @app.route('/account')
 def account():

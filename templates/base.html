@@ -28,14 +28,24 @@
 					<!--<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>-->
 					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="/shop">Shop</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+					<!--<li class="nav-item"> <a class="nav-link js-scroll-trigger"
+							href="{{ url_for('account') }}"><i class="fas fa-user"></i></a></li>-->
+
+					{% if 'username' not in session %}
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 							href="{{ url_for('account') }}"><i class="fas fa-user"></i></a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-							href=""><i class="fas fa-shopping-cart"></i></a>
+			{% else %}
+			<li class="nav-item"><a class="nav-link js-scroll-trigger"
+							href="{{ url_for('account') }}">Hello, {{username}}</a></li>
+<li class="nav-item"> <a class="nav-link js-scroll-trigger" href="/logout">Sign Out</a></li>
+							{% endif %}
 
-					</li>
-				</ul>
-			</div>
+
+			<li class="nav-item"><a class="nav-link js-scroll-trigger" href=""><i class="fas fa-shopping-cart"></i></a>
+
+			</li>
+			</ul>
+		</div>
 		</div>
 	</nav>
 	<!-- Masthead-->
@@ -54,8 +64,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="{{ url_for('static', filename= 'js/scripts.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}">
-</script>
+	<script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}">
+	</script>
 </body>
 
 </html>
