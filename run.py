@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, flash, session, redirect, url
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
+import sys
 
 app = Flask(__name__) 
 app.config["MONGO_DBNAME"] = 'plantstoreDB'
@@ -23,20 +24,20 @@ def index():
 
     #return render_template('index.html')
 
-   
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
-    users = mongo.db.users
-    login_user = users.find_one({'name' : request.form['username']})
+    if request.method == 'GET':
+     return render_template("login.html")
 
-    if login_user:
-        if bcrypt.hashpw(request.form['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
-            session['username'] = request.form['username']
-            return redirect(url_for('index'))
-
-    return 'Invalid username/password combination'
-
+    if request.method == 'POST':
+      users = mongo.db.users
+      login_user = users.find_one({'name' : request.form['username']})
+      if bcrypt.checkpw(request.form['password'].encode('utf-8'), login_user['password']):
+        session['username'] = request.form['username']
+        return redirect(url_for('index'))
+      else:
+        return 'Invalid username/password combination'        
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
@@ -45,7 +46,7 @@ def register():
         existing_user = users.find_one({'name' : request.form['username']}) # search within collection users whether there is no double
  
         if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt()) #not storing plaintext but storing hash version of it so more secure
+            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'),bcrypt.gensalt() ) #not storing plaintext but storing hash version of it so more secure
             users.insert({'name' : request.form['username'], 'password' : hashpass}) #insert everything to users collection
             session['username'] = request.form['username']
             return redirect(url_for('index'))
