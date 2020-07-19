@@ -14,9 +14,9 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    username = session['username']
+    #username = session['username']
     
-    return render_template('index.html', username=username)
+    return render_template('index.html')
 
     #if 'username' in session:
         #return 'You are logged in as ' + session['username']
@@ -31,7 +31,7 @@ def login():
     login_user = users.find_one({'name' : request.form['username']})
 
     if login_user:
-        if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+        if bcrypt.hashpw(request.form['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
             session['username'] = request.form['username']
             return redirect(url_for('index'))
 
