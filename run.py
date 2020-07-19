@@ -1,10 +1,9 @@
 import os
 import json
-from flask import Flask, render_template, request, flash, session, redirect, url_for
+from flask import Flask, render_template, request, flash, session, redirect, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
-import sys
 
 app = Flask(__name__) 
 app.config["MONGO_DBNAME"] = 'plantstoreDB'
@@ -15,15 +14,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    #username = session['username']
-    
     return render_template('index.html')
-
-    #if 'username' in session:
-        #return 'You are logged in as ' + session['username']
-
-    #return render_template('index.html')
-
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -32,26 +23,37 @@ def login():
 
     if request.method == 'POST':
       users = mongo.db.users
-      login_user = users.find_one({'name' : request.form['username']})
-      if bcrypt.checkpw(request.form['password'].encode('utf-8'), login_user['password']):
-        session['username'] = request.form['username']
-        return redirect(url_for('index'))
-      else:
-        return 'Invalid username/password combination'        
+      try:
+        login_user = users.find_one({'name' : request.form['username']})
+        if bcrypt.checkpw(request.form['password'].encode('utf-8'), login_user['password']):
+          session['username'] = request.form['username']
+          flash('You were successfully logged in', 'message') 
+          return redirect(url_for('index'))
+        else:
+          flash('Invalid password provided', 'error')
+          return render_template("login.html")
+      except:
+          flash('Not a known user', 'error')
+          return render_template("login.html")
+
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
+      if request.form['password'] != request.form['cpassword']:
+        flash('Passwords are not the same', 'error') 
+        render_template('register.html')
+
         users = mongo.db.users
         existing_user = users.find_one({'name' : request.form['username']}) # search within collection users whether there is no double
- 
+        
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'),bcrypt.gensalt() ) #not storing plaintext but storing hash version of it so more secure
             users.insert({'name' : request.form['username'], 'password' : hashpass}) #insert everything to users collection
-            session['username'] = request.form['username']
-            return redirect(url_for('index'))
-        
-        return 'That username already exists!'
+            flash("You're account has been registered", 'message')
+            return redirect(url_for('login'))
+        else: 
+          flash('That username already exists', 'error') 
 
     return render_template('register.html')
 
