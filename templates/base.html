@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" />
 	<!-- Font Awesome icons (free version)-->
 	<script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- bootstrap css -->
+   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
 	<!-- Google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
 	<link
@@ -48,17 +50,30 @@
 				</ul>
 			</div>
 		</div>
+        
+	</nav>
+               <!--Alert message to provide feedback to user-->
     {% with messages = get_flashed_messages(with_categories=true) %}
 	{% if messages %}
-		<ul class=flashes>
+    
+        <!--<ul class="flashes">-->
 			{% for category, message in messages %}
-      <li class="{{ category }}">{{ message }}</li>
+            <div class="container-fluid" id="modalwindow">
+    <div class="row no-gutters">
+        <div class="col-12">
+       <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
+                <span>{{ message }}</span>
+                <button type="button" class="close" id="close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            		</div>
+        </div>
     {% endfor %}
-		</ul>
+
 		{% endif %}
 		{% endwith %}
-
-	</nav>
+   
 	<!-- Masthead-->
 	{% block content %}
 	{% endblock %}

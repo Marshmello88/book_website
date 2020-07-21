@@ -44,6 +44,7 @@ def register():
         flash('Passwords are not the same', 'error') 
         render_template('register.html')
 
+      else:
         users = mongo.db.users
         existing_user = users.find_one({'name' : request.form['username']}) # search within collection users whether there is no double
         
