@@ -76,38 +76,33 @@ def plantcare():
     return render_template("plantcare.html")
 
 
+
 @app.route('/shop')
 def shop():
     return render_template("shop.html")
     
 
+# shopping cart
+@app.route("/cart")
+def shopping_cart():
+    return render_template("cart.html")
+
+
+#@app.route('/')
+#@app.route('/get_products')
+#def get_tasks():
+ #   return render_template("cart.html", tasks=mongo.db.products.find())
+
+
+@app.route('/add_product', methods=['POST'])
+def add_product():
+    products = mongo.db.products
+    products.insert_one(request.form.to_dict())
+    return redirect(url_for('shop'))
+ 
+ 
+
 # Route for handling the login page logic https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/
-#@app.route('/login', methods=['GET', 'POST'])
-#def login():
- #   error = None
-   # if request.method == 'POST':
-    #    if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-     #       error = 'Invalid Credentials. Please try again.'
-      #  else:
-       #     return redirect(url_for('home'))
-    #return render_template('account.html', error=error)
-
-
-#@app.route("/register", methods = ['GET', 'POST'])
-#def register():
-  #  if request.method == 'POST':   
-   #     password = request.form['password']
-    #    email = request.form['email']
-#
- #       user_id =  plantCluster.insert({
-  #          'email' : email,
-   #         'password' : password,
-    #    })
-#new_user = plantCluster.find_one({'_id' : user_id})
-
-#result = {'email' : new_user['email'] + 'registered'}
-
-#return jsonify ({'result' : result})
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

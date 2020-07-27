@@ -28,7 +28,7 @@
 					<li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="/shop">Shop</a></li>
 					<li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="#signup">Contact</a></li>
 					<li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
-							href="{{ url_for('account') }}"><i class="fas fa-user"></i></a></li>
+							href="{{ url_for('login') }}"><i class="fas fa-user"></i></a></li>
 					<li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
 							href=""><i class="fas fa-shopping-cart"></i></a></li>
 				</ul>
@@ -40,13 +40,30 @@
 	<!-- Masthead-->
 
 	<section class="shop-section bg-light">
+<div class="text-block">
+<div class="text-container">
+<!--<p> Whether you’re in the market for a <strong>big</strong>, leafy plant to anchor your living room or a <strong>pint-sized</strong> waxy <strong>succulent</strong> for your desk, we’re <strong>delighted</strong> to be a part of your road to <strong>happiness</strong>. </p>-->
+<p> At <strong style="font-weight:bold">Happy☺Plants</strong> we have a range full of popular houseplants with <strong>air-purifying</strong>, <strong>prickly</strong>, non-poisonous and even <strong>moving properties</strong>.</p></div>
+<div class="block-picture" style="background-color: ">
+                <img src="{{ url_for('static', filename='assets/img/yellow.jpg') }}" alt="plants">
+            </div>
 
+</div>
+<div class="page-separator"></div>
+
+
+ <form action="{{ url_for('add_product') }}" method="POST">
 		<div class="shop-wrapper">
 
 			<ul class="shop-display flex-wrap" id="productrange">
             
 				<li class="list-item"> 
                 <div class="imgwrap">
+                <input type="number" id="quantity" name="quantity" min="1" max="5">
+                <input type="hidden" id="product" name="product" value="This is the product name">
+                <button class=carticon" type="submit" name="action">Add to cart</button>
+                <!--<button class="carticon" type="button" class="btn btn-primary"><i class="fas fa-shopping-cart fa-2x"></i></button>-->
+                <!--<div class="carticon"> <i class="fas fa-shopping-cart fa-2x"></i></div>-->
 					<div class="product-image flex-center flex">
 						<img src="{{ url_for('static', filename='assets/img/calathea_lancifolia.png') }}">
               </div>
@@ -924,6 +941,7 @@
 					href="#!"><i class="fab fa-github"></i></a>
 			</div>
 		</div>
+        </form>
 	</section>
 	<!-- Footer-->
 	<footer class="footer bg-offwhite small text-center text-black-50">
