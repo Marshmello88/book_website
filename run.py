@@ -79,12 +79,18 @@ def plantcare():
 
 @app.route('/shop')
 def shop():
-    return render_template("shop.html")
+    #check the users cart + templating
+    catalogue = mongo.db.catalogue.find({})
+    return render_template("shop.html", all_products=catalogue)
+    
     
 
 # shopping cart
 @app.route("/cart")
 def shopping_cart():
+# check if the user is in session 
+# get the users cart
+# pass it to render template
     return render_template("cart.html")
 
 
@@ -96,7 +102,14 @@ def shopping_cart():
 
 @app.route('/add_product', methods=['POST'])
 def add_product():
-    products = mongo.db.products
+    #get user_id
+    #product_id, quantity, via post method
+    #does the person have an existing cart?
+    # if yes, update
+    #if no create + update     products.insert_one(request.form.to_dict())
+    print("********")
+    print(request.form)
+    products = mongo.db.products 
     products.insert_one(request.form.to_dict())
     return redirect(url_for('shop'))
  

@@ -4120,12 +4120,20 @@ button.close {
 color: #155724;
 background-color: #d4edda;
 border-color: #c3e6cb;
+position:relative;
 }
 
 .alert.error {
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
+}
+
+.flashspan {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
 }
 
 
@@ -4316,11 +4324,11 @@ margin: 3rem auto 4rem auto;
 position: relative;
 z-index: 2;
 /*remove this to recenter the text*/
-max-width: 540px;
+/*max-width: 540px;
 height: 500px;
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: center;*/
 }
 
 .page-separator {
@@ -4331,15 +4339,17 @@ margin-right: auto;
 }
 
 .block-picture {
-    width: 75%;
-    height: 490px;
+    /*width: 75%;*/
+    /*height: 490px;*/
     background-position: center;
     background-size: cover;
     position: absolute;
     right: 0;
-    top: 2%;
+    top: 0%;
+    /*top: 2%;*/
     z-index: 0;
-    background-blend-mode: multiply;
+    /*background-blend-mode: multiply;*/
+
 }
 
 
