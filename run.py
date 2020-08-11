@@ -25,8 +25,12 @@ def login():
       users = mongo.db.users
       try:
         login_user = users.find_one({'name' : request.form['username']})
+        print(login_user, "++++++++++++++++++")
+        user_id = str(login_user["_id"])
         if bcrypt.checkpw(request.form['password'].encode('utf-8'), login_user['password']):
           session['username'] = request.form['username']
+          #session["user_id"] = login_user[user_id]
+          print(session, "+++++++++++session")
           flash('You were successfully logged in', 'message') 
           return redirect(url_for('index'))
         else:
@@ -86,33 +90,41 @@ def shop():
     
 
 # shopping cart
-@app.route("/cart")
+@app.route("/cart", methods=['GET'])
 def shopping_cart():
+    all_products = []
+    user = session["username"]
+    user_cart = mongo.db.cart.find({"action": user}) #db.collection.find(query, projection) Former specifies selection filter, latter. Former specifies the fields to return in the documents that match the query filter. 
+    print(user_cart, "++++++++++++all user's cart")
+    for product in user_cart:
+        print(product, "++++++++++++++++++++")
+        print(ObjectId(oid=str(product["product_id"])))
+        cart_product = mongo.db.catalogue.find({"_id": ObjectId(oid=str(product["product_id"]))})
+        all_products.append(cart_product)
+    print(all_products, "+++++all products in cart")
 # check if the user is in session 
 # get the users cart
 # pass it to render template
-    return render_template("cart.html")
 
+    return render_template("cart.html", products=all_products)
 
-#@app.route('/')
-#@app.route('/get_products')
-#def get_tasks():
- #   return render_template("cart.html", tasks=mongo.db.products.find())
-
-
-@app.route('/add_product', methods=['POST'])
-def add_product():
-    #get user_id
-    #product_id, quantity, via post method
-    #does the person have an existing cart?
-    # if yes, update
-    #if no create + update     products.insert_one(request.form.to_dict())
-    print("********")
-    print(request.form)
-    products = mongo.db.products 
-    products.insert_one(request.form.to_dict())
-    return redirect(url_for('shop'))
+   
  
+@app.route('/add_cart', methods=['POST'])
+def add_cart():
+    #insert into cart collection + redirect to /cart
+    #fetch user_id from session
+    #to fetch items of the cart collection use mongodb '.find({user_id:...})' then loop through each cart item and fetch the product using '.find_one' with the product id.
+    print(request.form)
+    user = session["username"] #fetch user from session
+    print(user, "++++++++++++logged in user")
+    cart_request = request.form.to_dict() #to_dict returns a dictionary
+    print(cart_request["product_id"])
+    cart_request['action'] = user #add to a dictionary by specifying the key and value (['key'] = value )
+    print(cart_request, "+++++++++cart")
+    cart = mongo.db.cart 
+    cart.insert_one(cart_request)
+    return redirect(url_for('shop'))
  
 
 # Route for handling the login page logic https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/

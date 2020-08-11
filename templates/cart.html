@@ -4,8 +4,50 @@
 <header class="masthead">
 	<div class="container d-flex h-100 align-items-center">
 
-<h2>MY SHOPPING CART </h2>
-</div>
+		<div class="cart-content">
+			<div class="cart-content-header">
+				<h2 class="">My Shopping Cart</h1>
+			</div>
+			<div class="checkout">
+            <button class="btn-checkout">Checkout</button></div>
+			<div class="cart-content-container">
+				<div class="products-container">
+					<ul class="products-container-header">
+						<li class="header-amount">Amount</li>
+						<li class="header-products">
+							Product(s)</li>
+						<li class="header-price">Price</li>
+					</ul>
+					<div class="product-list">
+						<div class="products__item product-card"><input type="hidden" class="products-info-data">
+                            {% for item in products %}
+							<div class="product-image">
+                            {{item["img_url"]}}
+							</div>
+							<div class="product-title">
+                            {{item["quantity"]}}
+							</div>
+							<div class="product-price"> </div>
+                            {% endfor %}
+						</div>
+						
+					</div>
+				</div>
+				<div class="cart-total-container"">
+					<span class="total-amount-text">Total amount:</span><span class="total-value"></span>
+				</div>
+
+			</div>
+
+
+		</div>
+
+
+
+
+
+
+	</div>
 </header>
 
 <!-- Contact-->

@@ -40,10 +40,10 @@
                {% for product in all_products %}
                <li class="list-item">
                   <div class="imgwrap">
-                     <form action="{{ url_for('add_product') }}" method="POST">
+                     <form action="{{ url_for('add_cart') }}" method="POST">
                         <input type="number" id="quantity" name="quantity" min="1" max="5">
-                        <input type="hidden" id="product" name="product_id" value='{{product._id}}' >
-                        <button class=carticon" type="submit" name="action">Add to cart</button>
+                        <input type="hidden" id="product" name="product_id" value='{{product["_id"]}}' >
+                        <button class="" type="submit" name="action">Add to cart</button>
                      </form>
                      <!--<button class="carticon" type="button" class="btn btn-primary"><i class="fas fa-shopping-cart fa-2x"></i></button>-->
                      <!--<div class="carticon"> <i class="fas fa-shopping-cart fa-2x"></i></div>-->

@@ -4338,19 +4338,19 @@ justify-content: center;*/
 margin-right: auto;
 }
 
-.block-picture {
-    /*width: 75%;*/
-    /*height: 490px;*/
+/*.block-picture {
+    width: 75%;
+    height: 490px;
     background-position: center;
     background-size: cover;
     position: absolute;
     right: 0;
     top: 0%;
-    /*top: 2%;*/
+    top: 2%;
     z-index: 0;
-    /*background-blend-mode: multiply;*/
+    background-blend-mode: multiply;
 
-}
+}*/
 
 
 .text-block p strong {
@@ -4511,7 +4511,7 @@ margin-top: 9rem;
 }
 
 .section-title {
-    font-size: 4.75rem;
+    font-size: 4.10rem;
     line-height: 1.1;
     padding: 0 20%;
 }
@@ -4520,6 +4520,13 @@ margin-top: 9rem;
     padding: 0 20%;
     font-size: 1.5rem;
     margin-bottom: 4rem;
+}
+
+.extrastrong {
+    background-image: linear-gradient(to right, rgb(203, 255, 15) 100%, transparent 100%);
+    background-position: 0px 0.71em;
+    background-repeat: repeat-x;
+    background-size: 1em 0.25em;
 }
 
 .leafy-bg {
@@ -4614,4 +4621,81 @@ margin-top: 9rem;
 
 #shopping-cart table td {
 	background-color: #FFFFFF;
+}
+
+.cart-content-section {
+    position: relative;
+    padding: 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    font-size: 12px;
+}
+
+.checkout {
+    float: left;
+    width: 100%;
+    margin: 0 0 15px;
+}
+
+.cart-content-container {
+    float: left;
+    width: 100%;
+}
+
+.products-container {
+    float: left;
+    width: 100%;
+}
+
+.products-container-header {
+    float: left;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    border-bottom: 1px solid #bebebe;
+}
+
+.cart-content-header h2 {
+
+}
+
+.btn-checkout {
+    float: right;
+}
+
+.header-amount{
+    float: left;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px 5px;
+}
+
+.header-products {
+    float: left;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px 5px;
+}
+
+.header-price {
+    float: left;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px 5px;
+}
+
+.cart-total-container {
+    float: left;
+    width: 100%;
+    margin: 0 0 32px;
+}
+
+.total-amount-text{
+    font-size: 14px;
+    font-weight: 700;
+    float: left;
+    width: 89%;
+    text-align: right;
+    margin: 2px 0 0;
 }
