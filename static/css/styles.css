@@ -4632,10 +4632,24 @@ margin-top: 9rem;
     font-size: 12px;
 }
 
+.cart-content {
+    width: 100%;
+}
+
 .checkout {
     float: left;
     width: 100%;
     margin: 0 0 15px;
+}
+
+.checkout-btn {
+    float: right;
+    border: 0;
+    border-radius: 15px;
+    font-size: 18px;
+    background-color: #64a19d;
+    color: #fff;
+    padding: 11px 20px;
 }
 
 .cart-content-container {
@@ -4656,43 +4670,90 @@ margin-top: 9rem;
     border-bottom: 1px solid #bebebe;
 }
 
-.cart-content-header h2 {
-
+.products-header-container {
+    float: left;
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid #bebebe;
 }
 
-.btn-checkout {
-    float: right;
+
+
+.cartimg {
+    max-height: 64px;
+    max-width: 64px;
+    height: auto;
+    width: auto;
+    background-color: white;
 }
+
 
 .header-amount{
-    float: left;
+    width: 19%;
     font-weight: 700;
-    font-size: 12px;
-    padding: 10px 5px;
+    font-size: 14px;
 }
 
 .header-products {
-    float: left;
     font-weight: 700;
-    font-size: 12px;
-    padding: 10px 5px;
+    font-size: 14px;
 }
 
 .header-price {
     float: left;
+   width: 19%;
     font-weight: 700;
-    font-size: 12px;
-    padding: 10px 5px;
+    font-size: 14px;
 }
 
+.input-quantity {
+border: 1px solid #d7d2cb;
+    margin-bottom: 0;
+    max-width: 6.25rem;
+}
+
+.input-field {
+    width: 42px;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 2rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0;
+    margin:0;
+    border: 1px solid #b3b3b3;
+}
+
+/*.cart-header-row {
+    display: flex;
+}*/
+
+.minus-button, .plus-button {
+    color: #2d2a24;
+   /* padding: .5rem .625rem;*/
+    background-color: #fff;
+        border: 1px solid #b3b3b3;
+        float: left;
+        height: 2.4rem;
+}
+
+.input-button {
+}
+
+.display-block {
+margin-right: 0;
+}
+
+
 .cart-total-container {
+    padding-top: 2rem;
     float: left;
     width: 100%;
     margin: 0 0 32px;
 }
 
 .total-amount-text{
-    font-size: 14px;
+    font-size: 1.25rem;
     font-weight: 700;
     float: left;
     width: 89%;

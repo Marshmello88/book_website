@@ -9,32 +9,51 @@
 				<h2 class="">My Shopping Cart</h1>
 			</div>
 			<div class="checkout">
-            <button class="btn-checkout">Checkout</button></div>
+				<button class="checkout-btn">Checkout</button></div>
 			<div class="cart-content-container">
 				<div class="products-container">
-					<ul class="products-container-header">
-						<li class="header-amount">Amount</li>
-						<li class="header-products">
-							Product(s)</li>
-						<li class="header-price">Price</li>
-					</ul>
-					<div class="product-list">
-						<div class="products__item product-card"><input type="hidden" class="products-info-data">
-                            {% for item in products %}
-							<div class="product-image">
-                            {{item["img_url"]}}
-							</div>
-							<div class="product-title">
-                            {{item["quantity"]}}
-							</div>
-							<div class="product-price"> </div>
-                            {% endfor %}
-						</div>
-						
+					<table class="products-header-container">
+						<tr class="cart-header-row">
+							<td class="header-products"></td>
+							<td class="header-products">Product(s)</td>
+							<td class="header-amount">Quantity</td>
+							<td class="header-price">Price</td>
+						</tr>
+						{% for item in products %}
+						<tr>
+							<td class="display-block">
+								<img class="cartimg" src={{ url_for('static', filename=item.img_url) }}></td>
+							<td>{{item["name"]}}</td>
+							<td>
+								<div class="quantity-group">
+									<div class="input-quantity"
+										style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+										<div class="input-button">
+											<button type="button" class="minus-button"> − </button>
+										</div>
+										<input class="input-field text-center" type="number" name="quantity">
+										<div class="input-group-button">
+											<button type="button" class="plus-button"> + </button>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td>{{item["price"] * 2}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+
+					<div class="product-image">
+
 					</div>
+					<div class="product-title">
+
+					</div>
+					<div class="product-price"> </div>
+
 				</div>
 				<div class="cart-total-container"">
-					<span class="total-amount-text">Total amount:</span><span class="total-value"></span>
+					<span class=" total-amount-text">Subtotal:</span><span class="total-value"></span>
 				</div>
 
 			</div>

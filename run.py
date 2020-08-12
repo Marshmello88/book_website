@@ -94,12 +94,16 @@ def shop():
 def shopping_cart():
     all_products = []
     user = session["username"]
-    user_cart = mongo.db.cart.find({"action": user}) #db.collection.find(query, projection) Former specifies selection filter, latter. Former specifies the fields to return in the documents that match the query filter. 
+#db.collection.find(query, projection) Former specifies selection filter, latter specifies the fields to return in the documents that match the query filter. 
+#Selects documents in a collection or view and returns a cursor to the selected documents.
+#retrieve the user from cart collection:
+    user_cart = mongo.db.cart.find({"action": user}) 
     print(user_cart, "++++++++++++all user's cart")
+#loop through each cart item, fetch product with find_one
     for product in user_cart:
         print(product, "++++++++++++++++++++")
         print(ObjectId(oid=str(product["product_id"])))
-        cart_product = mongo.db.catalogue.find({"_id": ObjectId(oid=str(product["product_id"]))})
+        cart_product = mongo.db.catalogue.find_one({"_id": ObjectId(oid=str(product["product_id"]))})
         all_products.append(cart_product)
     print(all_products, "+++++all products in cart")
 # check if the user is in session 
@@ -120,6 +124,10 @@ def add_cart():
     print(user, "++++++++++++logged in user")
     cart_request = request.form.to_dict() #to_dict returns a dictionary
     print(cart_request["product_id"])
+    product = mongo.db.cart.find_one({"product_id": cart_request["product_id"]}, {"action": user}) 
+    if product:
+        flash('Already added to cart', 'message')
+        return redirect(url_for('shop')) 
     cart_request['action'] = user #add to a dictionary by specifying the key and value (['key'] = value )
     print(cart_request, "+++++++++cart")
     cart = mongo.db.cart 
