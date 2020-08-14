@@ -90,27 +90,35 @@ def shop():
     
 
 # shopping cart
-@app.route("/cart", methods=['GET'])
+@app.route("/cart", methods=['GET', 'POST', 'PUT'])
 def shopping_cart():
-    all_products = []
+    print(request.method, "++++++++++++++++++++")
     user = session["username"]
-#db.collection.find(query, projection) Former specifies selection filter, latter specifies the fields to return in the documents that match the query filter. 
-#Selects documents in a collection or view and returns a cursor to the selected documents.
-#retrieve the user from cart collection:
-    user_cart = mongo.db.cart.find({"action": user}) 
-    print(user_cart, "++++++++++++all user's cart")
-#loop through each cart item, fetch product with find_one
-    for product in user_cart:
-        print(product, "++++++++++++++++++++")
-        print(ObjectId(oid=str(product["product_id"])))
-        cart_product = mongo.db.catalogue.find_one({"_id": ObjectId(oid=str(product["product_id"]))})
-        all_products.append(cart_product)
-    print(all_products, "+++++all products in cart")
-# check if the user is in session 
-# get the users cart
-# pass it to render template
+    if request.method == 'GET':
+        all_products = []
+    #db.collection.find(query, projection) Former specifies selection filter, latter specifies the fields to return in the documents that match the query filter. 
+    #Selects documents in a collection or view and returns a cursor to the selected documents.
+    #retrieve the user from cart collection:
+        user_cart = mongo.db.cart.find({"action": user}) 
+    #loop through each cart item, fetch product with find_one
+        for product in user_cart:
+            cart_product = mongo.db.catalogue.find_one({"_id": ObjectId(oid=str(product["product_id"]))})
+            cart_product["quantity"] = product["quantity"]
+            all_products.append(cart_product)
+        #print(all_products, "+++++all products in cart")
+    # check if the user is in session 
+    # get the users cart
+    # pass it to render template
 
-    return render_template("cart.html", products=all_products)
+        return render_template("cart.html", products=all_products)
+    #Pass request for the product we want to delete
+    if request.method == 'POST':
+        print("GOT here")
+        product_id = request.args.get('product_id')
+        print(product_id, "+++++++++++++query")
+        mongo.db.cart.remove({"action": user, "product_id": product_id})
+        return redirect(url_for('shopping_cart'))
+
 
    
  
