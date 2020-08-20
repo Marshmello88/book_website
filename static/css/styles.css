@@ -4792,3 +4792,69 @@ margin-right: 0;
     text-align: right;
     margin: 2px 0 0;
 }
+
+
+
+/* **************** easy plants ************ */
+
+.easyplantlist {
+/*float: left;*/
+margin-right: 2%;
+margin-left:auto;
+width: 66%;
+}
+
+.easycarecontainer {
+margin-bottom: 1.875rem;
+    position: relative;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.easy-list-content {
+    margin-top: 1.875rem;
+}
+
+.slideheader {
+margin-bottom: 0;
+width: 40.5%;
+/*float: right;*/
+}
+
+.slideheadernr {
+    /*font-family: Orelo Standard Bold,Times,Serif;*/
+    font-size: 5.625rem;
+    line-height: 1;
+    color: #dbe125;
+    display: block;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.outermediawrapper {
+    overflow: hidden;
+    /*float: left;*/
+    margin-right: 2%;
+
+}
+
+.slideheadtxt {
+    display: block;
+}
+
+.slideinner {
+    /*float: left;*/
+    margin-right: 2%;
+    width: 54.9242424242%;
+}
+
+.slidedescriptor {
+       /*float: right;*/
+       width: 45%;
+}
+
+.easyplantimg {
+    display: block;
+    width: 100%;
+    min-height: .0625rem;
+}

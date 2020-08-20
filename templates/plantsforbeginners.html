@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" />
+      <!-- Font Awesome icons (free version)-->
+      <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+      <!-- Google fonts-->
+      <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+      <link
+         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+         rel="stylesheet" />
+      <!-- Core theme CSS (includes Bootstrap)-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
+   </head>
+   <body id="shop-body">
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-shop fixed-top" id="mainNav">
+         <div class="container">
+            <a class="js-scroll-trigger navbar-brand-shop"
+               href="/">Happy<span class="smiley">☺</span>Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="/shop">Shop</a></li>
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="#signup">Contact</a></li>
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
+                     href="{{ url_for('login') }}"><i class="fas fa-user"></i></a></li>
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
+                     href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!--Alert message to provide feedback to user-->
+      <div class="alerts-wrapper">
+         {% with messages = get_flashed_messages(with_categories=true) %}
+         {% if messages %}
+         <!--<ul class="flashes">-->
+         {% for category, message in messages %}
+         <!-- <div class="container-fluid" id="mdalwindow"> -->
+         <div class="row no-gutters">
+            <div class="col-12">
+               <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
+                  <span class="flashes">{{ message }}</span>
+               </div>
+            </div>
+         </div>
+         <!-- </div> -->
+         {% endfor %}
+         {% endif %}
+         {% endwith %}
+      </div>
+            <header role="banner">
+               <h1 class="section-title text-center"> Best Houseplants for Beginners </h1>
+               <h2 class="section-subtitle text-center">
+                  We’ve put together a list of the easiest to care for houseplants out there that anyone can grow.
+               </h2>
+               <div class="care">
+                  <img src="{{ url_for('static', filename='assets/img/low-maintenance.jpg') }}">
+               </div>
+            </header>
+            <section class="easycarecontainer">
+               <div class="easyplantlist">
+                  <div class="easy-list-content">
+                  <!--------- LIST OF BEGINNER PLANTS --------->
+                     <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">1</span>
+                           <span class="slideheadtxt">Snake Plant</span>
+                        </div>
+                        <div class="outermediawrapper">
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <img alt="snake plant" class="easyplantimg" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=480:*"></img>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> This hardy plant will do just fine in any type of light from low light areas to bright, full sun. Sansevieria don’t need a lot of water, are not sensitive to temperature changes, and don’t require any additional care. They ar also highly-sought after for their air-purifying properties.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">2</span>
+                           <span class="slideheadtxt">Pothos</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="pothos" title="pothos" class="" data-src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hanging-plant-royalty-free-image-1584111816.jpg?crop=0.93333xw:1xh;center,top&amp;resize=480:*" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hanging-plant-royalty-free-image-1584111816.jpg?crop=0.93333xw:1xh;center,top&amp;resize=480:*">
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> Pothos plants are known for their ease of care and durability. They are happy placed in a bright well-lit area, however, they can tolerate lower light. They are living air purifiers, removing common household toxins from the air, making it a healthy and beautiful addition for your space.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">3</span>
+                           <span class="slideheadtxt">Aglaonema</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="aglaonema" title="aglaonema" class="" data-src="https://hips.hearstapps.com/hbu.h-cdn.co/assets/15/39/1442864906-chinese-evergreen.jpg?crop=0.665xw:1.00xh;0.187xw,0&amp;resize=480:*" src="https://hips.hearstapps.com/hbu.h-cdn.co/assets/15/39/1442864906-chinese-evergreen.jpg?crop=0.665xw:1.00xh;0.187xw,0&amp;resize=480:*">
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> The Chinese evergreen plant is extremely forgiving and can adapt to most room conditions, although it does not like drafts or prolonged temperatures below 15 degrees Celcius. It prefers low or indirect sunlight. Allow the soil to remain dry for a few days, before re-watering. Most varieties have some type of variegated leaf, making them all the more attractive.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">1</span>
+                           <span class="slideheadtxt">Snake Plant</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="Close-Up Of Potted Plant On Table Against Wall" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=480:*"></img>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> This hardy plant will do just fine in any type of light from low light areas to bright, full sun. Sansevieria don’t need a lot of water, are not sensitive to temperature changes, and don’t require any additional care. They ar also highly-sought after for their air-purifying properties.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">1</span>
+                           <span class="slideheadtxt">Snake Plant</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="Close-Up Of Potted Plant On Table Against Wall" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=480:*"></img>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> This hardy plant will do just fine in any type of light from low light areas to bright, full sun. Sansevieria don’t need a lot of water, are not sensitive to temperature changes, and don’t require any additional care. They ar also highly-sought after for their air-purifying properties.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">1</span>
+                           <span class="slideheadtxt">Snake Plant</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="Close-Up Of Potted Plant On Table Against Wall" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=480:*"></img>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> This hardy plant will do just fine in any type of light from low light areas to bright, full sun. Sansevieria don’t need a lot of water, are not sensitive to temperature changes, and don’t require any additional care. They ar also highly-sought after for their air-purifying properties.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">1</span>
+                           <span class="slideheadtxt">Snake Plant</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="Close-Up Of Potted Plant On Table Against Wall" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=480:*"></img>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> This hardy plant will do just fine in any type of light from low light areas to bright, full sun. Sansevieria don’t need a lot of water, are not sensitive to temperature changes, and don’t require any additional care. They ar also highly-sought after for their air-purifying properties.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">1</span>
+                           <span class="slideheadtxt">Snake Plant</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="Close-Up Of Potted Plant On Table Against Wall" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=480:*"></img>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> This hardy plant will do just fine in any type of light from low light areas to bright, full sun. Sansevieria don’t need a lot of water, are not sensitive to temperature changes, and don’t require any additional care. They ar also highly-sought after for their air-purifying properties.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">1</span>
+                           <span class="slideheadtxt">Snake Plant</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="Close-Up Of Potted Plant On Table Against Wall" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=480:*"></img>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BUY NOW </a> 
+                           <p> This hardy plant will do just fine in any type of light from low light areas to bright, full sun. Sansevieria don’t need a lot of water, are not sensitive to temperature changes, and don’t require any additional care. They ar also highly-sought after for their air-purifying properties.</p>
+                        </div>
+                     </div>
+                                         <div class="slide">
+                        <div class="slideheader">
+                           <span class="slideheadernr">1</span>
+                           <span class="slideheadtxt">Snake Plant</span>
+                        </div>
+                        <div class="slidemedia">
+                           <div class="slide-image">
+                              <div class="slideinner">
+                                 <span class="slideimgwrap">
+                                    <img class="">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=980:*" media="(min-width: 40.625rem)">
+                                    <source srcset="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=768:*" media="(min-width: 30rem)">
+                                    <img alt="Close-Up Of Potted Plant On Table Against Wall" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-potted-plant-on-table-against-wall-royalty-free-image-1583872071.jpg?crop=0.864xw:0.865xh;0.136xw,0.135xh&amp;resize=480:*"></img>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="slidedescriptor">
+                           <p><a href=""> BY NOW </a> 
+                           <p> This hardy plant will do just fine in any type of light from low light areas to bright, full sun. Sansevieria don’t need a lot of water, are not sensitive to temperature changes, and don’t require any additional care. They ar also highly-sought after for their air-purifying properties.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+      <!-- Signup-->
+      <section class="signup-section" id="signup">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10 signupmargin col-lg-8 text-center">
+                  <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                  <h2 class="text-white-50 h2margin">Get the dirt!</h2>
+                  <form class="form-inline d-flex">
+                     <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." /><button class="btn btn-primary signupbtn" type="submit">Subscribe</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Contact-->
+      <section class="contact-section bg-offwhite">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card py-4 h-100">
+                     <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Address</h4>
+                        <hr class="my-4" />
+                        <div class="small text-black-50">2034LP Street XXX Amsterdam</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card py-4 h-100">
+                     <div class="card-body text-center">
+                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Email</h4>
+                        <hr class="my-4" />
+                        <div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card py-4 h-100">
+                     <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Phone</h4>
+                        <hr class="my-4" />
+                        <div class="small text-black-50">+31624159080</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="social d-flex justify-content-center">
+               <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
+                  href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
+                  href="#!"><i class="fab fa-github"></i></a>
+            </div>
+         </div>
+      </section>

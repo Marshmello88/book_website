@@ -16,6 +16,10 @@ mongo = PyMongo(app)
 def index():
     return render_template('index.html')
 
+@app.route('/plantsforbeginners')
+def plantsforbeginners():
+    return render_template('plantsforbeginners.html')
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'GET':
@@ -118,7 +122,6 @@ def shopping_cart():
         #request gets the value from form and we are getting quantity
         #124 if it doesnt have quantity we want to delete and remove product id
         #128 finds product id we try to update and sets quantity to the new quantity to the new one that we have
-        #make price opaque
         req = request.form.to_dict()
         quantity = req.get("quantity")
         product_id = request.args.get('product_id')
@@ -128,9 +131,9 @@ def shopping_cart():
             mongo.db.cart.remove({"action": user, "product_id": product_id})
             return redirect(url_for('shopping_cart'))
         mongo.db.cart.update_one({"product_id": product_id}, {"$set": {"quantity": quantity}})
+        flash('Your cart was updated', 'message')
         return redirect(url_for('shopping_cart'))
     #update quantity
-
 
    
  
