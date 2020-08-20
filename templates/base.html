@@ -18,53 +18,54 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
    </head>
    <body id="page-top">
-      <!-- Navigation-->
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-         <div class="container">
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
             <a class="navbar-brand js-scroll-trigger"
-               href="/">Happy<span class="smiley">☺</span>Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+            href="/">Happy<span class="smiley">☺</span>Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-               <ul class="navbar-nav ml-auto">
-                  <!--<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>-->
-                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/shop">Shop</a></li>
-                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
-                  <!--<li class="nav-item"> <a class="nav-link js-scroll-trigger"
-                     href="{{ url_for('account') }}"><i class="fas fa-user"></i></a></li>-->
-                  {% if 'username' not in session %}
-                  <li class="nav-item"><a class="nav-link js-scroll-trigger"
-                     href="{{ url_for('login') }}"><i class="fas fa-user"></i></a></li>
-                  {% else %}
-                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('login') }}">Hello,
-                     {{session.username}}</a>
-                  </li>
-                  <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="{{ url_for('logout') }}">Sign Out</a></li>
-                  {% endif %}
-                  <li class="nav-item"><a class="nav-link js-scroll-trigger"
-                     href="/cart"><i class="fas fa-shopping-cart"></i></a>
-                  </li>
-               </ul>
+            <ul class="navbar-nav ml-auto">
+                <!--<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>-->
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/shop">Shop</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                <!--<li class="nav-item"> <a class="nav-link js-scroll-trigger"
+                    href="{{ url_for('account') }}"><i class="fas fa-user"></i></a></li>-->
+                {% if 'username' not in session %}
+                <li class="nav-item"><a class="nav-link js-scroll-trigger"
+                    href="{{ url_for('login') }}"><i class="fas fa-user"></i></a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('login') }}">Hello,
+                    {{session.username}}</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="{{ url_for('logout') }}">Sign Out</a></li>
+                {% endif %}
+                <li class="nav-item"><a class="nav-link js-scroll-trigger"
+                    href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+            </ul>
             </div>
-         </div>
-      </nav>
-      <!--Alert message to provide feedback to user-->
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-      <!--<ul class="flashes">-->
-      {% for category, message in messages %}
-      <div class="container-fluid" id="modalwindow">
-      <div class="row no-gutters">
-         <div class="col-12">
-            <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
-               <span class="flashspan">{{ message }}</span>
-               <button type="button" class="close" id="close">
-               <span aria-hidden="true">&times;</span>
-               </button>
+        </div>
+    </nav>
+    <!--Alert message to provide feedback to user-->
+    <div class="alerts-wrapper">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <!--<ul class="flashes">-->
+        {% for category, message in messages %}
+        <!-- <div class="container-fluid" id="mdalwindow"> -->
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
+                        <span class="flashes">{{ message }}</span>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
+        <!-- </div> -->
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
       <!-- Masthead-->
       {% block content %}
       {% endblock %}

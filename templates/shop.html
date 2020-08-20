@@ -28,11 +28,30 @@
                   <li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
                      href="{{ url_for('login') }}"><i class="fas fa-user"></i></a></li>
                   <li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
-                     href=""><i class="fas fa-shopping-cart"></i></a></li>
+                     href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
                </ul>
             </div>
          </div>
       </nav>
+       <!--Alert message to provide feedback to user-->
+          <div class="alerts-wrapper">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <!--<ul class="flashes">-->
+        {% for category, message in messages %}
+        <!-- <div class="container-fluid" id="mdalwindow"> -->
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
+                        <span class="flashes">{{ message }}</span>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
       <!-- Masthead-->
       <section class="shop-section bg-light">
          <div class="shop-wrapper">
@@ -43,7 +62,7 @@
                      <form action="{{ url_for('add_cart') }}" method="POST">
                         <input type="number" id="quantity" name="quantity" min="1" max="5">
                         <input type="hidden" id="product" name="product_id" value='{{product["_id"]}}' >
-                        <button class="" type="submit" name="action">Add to cart</button>
+                        <button class="addtocartbutton" type="submit" name="action">Add to cart</button>
                      </form>
                      <!--<button class="carticon" type="button" class="btn btn-primary"><i class="fas fa-shopping-cart fa-2x"></i></button>-->
                      <!--<div class="carticon"> <i class="fas fa-shopping-cart fa-2x"></i></div>-->

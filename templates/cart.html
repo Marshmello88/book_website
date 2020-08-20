@@ -29,18 +29,20 @@
 								<div class="quantity-group">
 									<div class="input-quantity"
 										style="display:flex; flex-direction: row; justify-content: center; align-items: center">
-										<div class="input-button">
-											<button type="button" class="minus-button"> − </button>
+										<!--<div class="input-button">
+											<button type="button" class="minus-button"> − </button>-->
 										</div>
+                                       <form action="{{ url_for('shopping_cart', product_id=item["_id"]) }}" method="POST">
 										<input class="input-field text-center" type="number" name="quantity" value={{item["quantity"]}} >
-                                       
-										<div class="input-group-button">
+                                        <button class="updatecart" type="submit" name="action">Update</button>
+                                       </form>
+										<!--<div class="input-group-button">
 											<button type="button" class="plus-button"> + </button>
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</td>
-							<td>{{item["price"] * 2}}</td>
+							<td>{{(item["price"] * item["quantity"]) | round(2, 'ceil')}}</td>
 
                             <td><form action="{{ url_for('shopping_cart', product_id=item["_id"]) }}" method=POST>
                             <button class="btn btn-default login-button" value="Login" type="submit">Delete</button> <br>

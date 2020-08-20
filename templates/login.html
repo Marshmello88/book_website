@@ -45,6 +45,33 @@
                {{ error }}
                {% endif %}
          </div>
+        
+
+        <!-- UNDER THE FORM - START -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <!--<ul class="flashes">-->
+        {% for category, message in messages %}
+        <!-- <div class="container-fluid" id="mdalwindow"> -->
+        <!-- <div class="row no-gutters">
+                <div class="col-6">
+                    <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
+                        <span class="flashes">{{ message }}</span>
+                        <button type="button" class="close" id="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>-->
+        <!-- </div> -->
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <!-- UNDER THE FORM - END-->
+
+
+        </div>
+         </div>
       </div>
    </div>
    </div>

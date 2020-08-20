@@ -93,7 +93,9 @@ def shop():
 @app.route("/cart", methods=['GET', 'POST', 'PUT'])
 def shopping_cart():
     print(request.method, "++++++++++++++++++++")
-    user = session["username"]
+    user = session.get("username")
+    if not user:
+        return redirect(url_for("login"))
     if request.method == 'GET':
         all_products = []
     #db.collection.find(query, projection) Former specifies selection filter, latter specifies the fields to return in the documents that match the query filter. 
@@ -103,7 +105,7 @@ def shopping_cart():
     #loop through each cart item, fetch product with find_one
         for product in user_cart:
             cart_product = mongo.db.catalogue.find_one({"_id": ObjectId(oid=str(product["product_id"]))})
-            cart_product["quantity"] = product["quantity"]
+            cart_product["quantity"] = int(product["quantity"])
             all_products.append(cart_product)
         #print(all_products, "+++++all products in cart")
     # check if the user is in session 
@@ -111,13 +113,23 @@ def shopping_cart():
     # pass it to render template
 
         return render_template("cart.html", products=all_products)
-    #Pass request for the product we want to delete
+    #Pass request for the product the user wants to delete
     if request.method == 'POST':
-        print("GOT here")
+        #request gets the value from form and we are getting quantity
+        #124 if it doesnt have quantity we want to delete and remove product id
+        #128 finds product id we try to update and sets quantity to the new quantity to the new one that we have
+        #make price opaque
+        req = request.form.to_dict()
+        quantity = req.get("quantity")
         product_id = request.args.get('product_id')
-        print(product_id, "+++++++++++++query")
-        mongo.db.cart.remove({"action": user, "product_id": product_id})
+        print(product_id, "+++++++++++++product", quantity)
+        if not quantity:
+            print(product_id, "+++++++++++++query")
+            mongo.db.cart.remove({"action": user, "product_id": product_id})
+            return redirect(url_for('shopping_cart'))
+        mongo.db.cart.update_one({"product_id": product_id}, {"$set": {"quantity": quantity}})
         return redirect(url_for('shopping_cart'))
+    #update quantity
 
 
    
@@ -133,6 +145,8 @@ def add_cart():
     cart_request = request.form.to_dict() #to_dict returns a dictionary
     print(cart_request["product_id"])
     product = mongo.db.cart.find_one({"product_id": cart_request["product_id"]}, {"action": user}) 
+    if product is None:
+        flash("Item(s) added to cart", 'message')
     if product:
         flash('Already added to cart', 'message')
         return redirect(url_for('shop')) 
