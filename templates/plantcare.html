@@ -16,26 +16,27 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
    </head>
    <body id="page-plantcare">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+     <nav class="navbar navbar-expand-lg navbar-easycare fixed-top" id="mainNav">
          <div class="container">
-            <a class="navbar-brand-plantcare js-scroll-trigger" href="/">Happy⊂(◉‿◉)つPlants
-            </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-               Menu
-               <svg class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-                  <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
-               </svg>
-               <!-- <i class="fas fa-bars"></i> -->
-            </button>
+            <a class="js-scroll-trigger navbar-brand-shop"
+               href="/">Happy<span class="smiley">☺</span>Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger" href="/shop">Shop</a></li>
-                  <li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger" href="#signup">Contact</a></li>
-                  <li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger"
-                     href="{{ url_for('account') }}"><i class="fas fa-user"></i></a></li>
-                  <li class="nav-item"><a class="nav-link-plantcare js-scroll-trigger"
-                     href=""><i class="fas fa-shopping-cart"></i></a>
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="/shop">Shop</a></li>
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="#signup">Contact</a></li>
+                  {% if 'username' not in session %}
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="{{ url_for('login') }}"><i class="fas fa-user"></i></a>
                   </li>
+                  {% else %}
+                  <li class="nav-item dropdown">
+                     <button class="dropbtn nav-link-shop dropbtnbegin js-scroll-trigger">Hello,
+                     {{session.username}}</button>
+                     <div class="dropdown-content"> <a class="dropdownitem" href="{{ url_for('logout') }}">Sign Out</a></div>
+                  </li>
+                  </li>
+                  {% endif %}
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
+                     href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
                </ul>
             </div>
          </div>
@@ -47,7 +48,7 @@
                <h2 class="section-subtitle text-center">There are plenty of ways to care for your plant. With the help
                   of
                   our plant experts,
-                  we’ve weeded out the Top Ten Tips for <strong class="extrastrong">healthy</strong>, <strong class="extrastrong">happy</strong> <strong class="extrastrong">plants</strong>.
+                  we’ve weeded out the Top Ten Tips for <strong class="">healthy</strong>, <strong class="">happy</strong> <strong class="">plants</strong>.
                </h2>
                <div class="care">
                   <img src="{{ url_for('static', filename='assets/img/plant-care.jpg') }}"> 
@@ -59,8 +60,7 @@
                   weeded out the Top Ten Tips for healthy, happy plants.
                </h6>
                <h5>1.​ ​Choose Plants Based on Light in your Space</h5>
-               <p>Are the plants you love the ones you can have? The​ available <a
-                  href="https://www.thesill.com/blogs/the-basics/lighten-up">light</a> in your space will help you
+               <p>Are the plants you love the ones you can have? The​ available light in your space will help you
                   decide. Check the direction your windows are facing; south-facing windows give bright light,
                   east/west-facing windows give moderate light and north-facing windows give low light. Most
                   houseplants
@@ -73,29 +73,25 @@
                   or underexpose any plant. They need the right amount of light to live.
                </p>
                <h5>2.​ Figure Out Your Plant Compatibility</h5>
-               <p><a href="https://www.thesill.com/collections/plants-for-beginners">New to plant parenthood</a>? A
+               <p>New to plant parenthood? A
                   busy
                   work schedule, social​ ​life and general forgetfulness can lead to unintentional plant neglect.
                   It’s
                   okay. Some plants can handle that kind of lifestyle. A jetsetter like yourself will enjoy the
                   resilience
-                  of low-maintenance <a href="https://www.thesill.com/collections/succulents">succulents</a>, <a
-                     href="https://www.thesill.com/products/zz-plant">ZZ plants</a> or <a
-                     href="https://www.thesill.com/products/snake-plant-zeylanica">snake plants</a>, all pretty low
+                  of low-maintenance succulents, ZZ plants or snake plants, all pretty low
                   key,
                   as long as they have enough light (bright and low light respectively). These should keep looking
                   their
                   best when you return from your next trip.
                </p>
-               <p>If you’ve got more time, you can try a few attention-loving <a
-                  href="https://www.thesill.com/products/air-plant-assortment">air plants</a>, orchids or <a
-                  href="https://www.thesill.com/products/birds-nest-fern">ferns</a>. Like a mist for the face, an
+               <p>If you’ve got more time, you can try a few attention-loving air plants, orchids or ferns. Like a mist for the face, an
                   extra spritz of filtered water daily between waterings keeps humidity levels nice and balanced for
                   these
                   delicate plants.
                </p>
                <h5>3.​ ​Less (Water) Is More</h5>
-               <p>It’s better to <a href="https://www.thesill.com/blogs/the-basics/drink-up">under water</a> your
+               <p>It’s better to under water your
                   plants
                   than to overwater. Too much water can lead to root rot. Ditch your water schedule and water your
                   plant
@@ -104,8 +100,7 @@
                   enough
                   water to do it’s thing for now.
                </p>
-               <p>How often you water will also change throughout the year. Plants need less water in the <a
-                  href="https://www.thesill.com/blogs/seasonal/seasonal-care-winter">winter</a>, when they’re
+               <p>How often you water will also change throughout the year. Plants need less water in the winter, when they’re
                   growing
                   slower, the days are shorter and sunlight is less intense. If the heat is on and the soil is drying
                   quicker, they may need a bit more water. Wilting leaves or soil that looks pulled away from the
@@ -121,8 +116,8 @@
                   that’s left on the saucer. If no water is left over, give the soil another soak.
                </p>
                <h5>4.​ ​Raise the Humidity Levels</h5>
-               <p>Staying true to your <a href="https://www.thesill.com/blogs/the-basics/eligible-environments">plants
-                  natural environment</a> will help your plant thrive indoors. Most tropical plants, ferns and
+               <p>Staying true to your plants
+                  natural environment will help your plant thrive indoors. Most tropical plants, ferns and
                   orchids
                   prefer high humidity and bright to moderate, indirect light. Mist these plants in between waterings
                   with
@@ -141,8 +136,8 @@
                   and forced-air vents, which can create hot or cold drafts.
                </p>
                <h5>6.​ ​Skip The Fertilizer</h5>
-               <p>It’s fine ​​​to​ ​skip the <a
-                  href="https://www.thesill.com/blogs/care-miscellaneous/plant-care-fertilizer">fertilizer</a>.
+               <p>It’s fine ​​​to​ ​skip the 
+                  fertilizer.
                   Too
                   much fertilizer can do more harm than good. Houseplants tend to not need fertilizer as often as
                   outdoor
@@ -177,11 +172,10 @@
                   at.
                </p>
                <h5>9.​ ​Don’t Be Scared to Repot</h5>
-               <p>A common misconception – <a
-                  href="https://www.thesill.com/blogs/care-miscellaneous/plant-care-repotting">repotting</a> does
+               <p>A common misconception – repotting does
                   not
                   necessarily mean putting your plant in a new planter, but rather, changing out your plant’s soil
-                  with <a href="https://www.thesill.com/products/potting-mix-plants">fresh potting mix</a>. New plants
+                  with fresh potting mix. New plants
                   should
                   be repotted at some point and given fresh soil, as they are not meant to live in the plastic
                   containers
@@ -191,8 +185,7 @@
                   plant is not swimming in soil, which may lead you to overwater. Keep it tight.
                </p>
                <h5>10.​ ​Let it Flow</h5>
-               <p>When you move your plant to a new, larger <a
-                  href="https://www.thesill.com/collections/pots">planter</a>,
+               <p>When you move your plant to a new, larger planter,
                   whether it’s terra cotta, ceramic, or fiber glass, make sure it has drainage, a fancy word for “hole
                   at
                   the bottom”. This will prevent overwatering as any excess water will have a place to flow. Get a
@@ -200,8 +193,7 @@
                   or tray and place it underneath to avoid a wet floor or window sill.
                </p>
                <p>You can get DIY and make your own drainage by lining the bottom of your planter with rocks to create
-                  crevices for the water to drain into. Here at The Sill, we use <a
-                     href="https://www.thesill.com/products/lava-rocks-plant-supplies">lava rocks</a> because they’re
+                  crevices for the water to drain into. Here at The Sill, we use lava rocks because they’re
                   porous.
                </p>
             </div>
@@ -263,5 +255,14 @@
             </div>
          </div>
       </section>
+        <!-- Footer-->
+      <footer class="footer bg-offwhite small text-center text-black-50">
+         <div class="container">Copyright © Happy<span class="smiley">☺</span>Plants 2020</div>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <script src="{{ url_for('static', filename= 'js/scripts.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}"></script>
    </body>
-   >
+</html>

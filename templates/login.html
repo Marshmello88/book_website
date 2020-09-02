@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<header class="masthead">
+<header class="masthead mastheadlogin">
    <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto accountCol">
          <div class="row">
-            <div class="col-6">
+            <div class="col-6 logintitle">
                <h2> Log In </h2>
                <form class="loginAccount" action="" method="post">
                   <p class="formRow">
@@ -25,54 +25,22 @@
                   {{ error }}
                   {% endif %}
             </div>
-            <!--<div class="col-6">
-               <h2> Register </h2>
-               <form class="loginAccount" action="" method="post">
-               
-               	<p class="formRow">
-               		<label for="username">Email address&nbsp; 
-               <span class="required">*</span></label> <br>
-               		<input type="text" class="" name="username" id="username"  value="{{ request.form.username }}">			</p>
-               		<p>A password will be sent to your email address.</p>
-               		<p class="formRow>
-               	<input class=" btn btn-default loginButton" type="submit" value="Login">
-               
-               			<a href="/register">Register here</a>
-               		</p>
-               </form>-->
             {% if error %}
             <p class="error"><strong>Error:</strong>
                {{ error }}
                {% endif %}
          </div>
-        
-
-        <!-- UNDER THE FORM - START -->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        <!--<ul class="flashes">-->
-        {% for category, message in messages %}
-        <!-- <div class="container-fluid" id="mdalwindow"> -->
-        <!-- <div class="row no-gutters">
-                <div class="col-6">
-                    <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
-                        <span class="flashes">{{ message }}</span>
-                        <button type="button" class="close" id="close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            </div>-->
-        <!-- </div> -->
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-        <!-- UNDER THE FORM - END-->
-
-
-        </div>
-         </div>
+         <!-- UNDER THE FORM - START -->
+         {% with messages = get_flashed_messages(with_categories=true) %}
+         {% if messages %}
+         {% for category, message in messages %}
+         {% endfor %}
+         {% endif %}
+         {% endwith %}
+         <!-- UNDER THE FORM - END-->
       </div>
+   </div>
+   </div>
    </div>
    </div>
 </header>

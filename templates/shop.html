@@ -1,58 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
+      <title>Happy:)Plants</title>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}"/>
       <!-- Font Awesome icons (free version)-->
       <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
       <!-- Google fonts-->
-      <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
       <link
          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-         rel="stylesheet" />
+         rel="stylesheet"/>
       <!-- Core theme CSS (includes Bootstrap)-->
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css"/>
    </head>
    <body id="shop-body">
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg navbar-shop fixed-top" id="mainNav">
          <div class="container">
             <a class="js-scroll-trigger navbar-brand-shop"
-               href="/">Happy(◡‿◡✿)Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+               href="/">Happy(◡‿◡✿)Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="/shop">Shop</a></li>
                   <li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="#signup">Contact</a></li>
-                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
-                     href="{{ url_for('login') }}"><i class="fas fa-user"></i></a></li>
+                  <li class="nav-item hide-on-desktop"> <a class="nav-link-shop" href="{{ url_for('logout') }}">Sign Out</a></li>
+                  {% if 'username' not in session %}
+                  <li class="nav-item"><a class="nav-link-shop js-scroll-trigger" href="{{ url_for('login') }}"><i class="fas fa-user"></i></a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item dropdown">
+                     <button class="dropbtn nav-link-shop js-scroll-trigger">Hello,
+                     {{session.username}}</button>
+                     <div class="dropdown-content"> <a class="dropdownitem" href="{{ url_for('logout') }}">Sign Out</a></div>
+                  </li>
+                  {% endif %}
                   <li class="nav-item"><a class="nav-link-shop js-scroll-trigger"
                      href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
                </ul>
             </div>
          </div>
       </nav>
-       <!--Alert message to provide feedback to user-->
-          <div class="alerts-wrapper">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        <!--<ul class="flashes">-->
-        {% for category, message in messages %}
-        <!-- <div class="container-fluid" id="mdalwindow"> -->
-            <div class="row no-gutters">
-                <div class="col-12">
-                    <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
-                        <span class="flashes">{{ message }}</span>
-                    </div>
-                </div>
+      <!--Alert message to provide feedback to user-->
+      <div class="alerts-wrapper">
+         {% with messages = get_flashed_messages(with_categories=true) %}
+         {% if messages %}
+         {% for category, message in messages %}
+         <div class="row no-gutters">
+            <div class="col-12">
+               <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
+                  <span class="flashes">{{ message }}</span>
+               </div>
             </div>
-        <!-- </div> -->
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-    </div>
-      <!-- Masthead-->
+         </div>
+         {% endfor %}
+         {% endif %}
+         {% endwith %}
+      </div>
+      <!-- Shop-->
       <section class="shop-section bg-light">
          <div class="shop-wrapper">
             <ul class="shop-display flex-wrap" id="productrange">
@@ -99,20 +106,15 @@
                      <img src="{{ url_for('static', filename='assets/img/cutiebox.gif') }}">
                   </div>
                   <div class="product-info">
-                     <h4 class="mt0 mb0 title f-bold"><b>Plant Pack: Bright Light</b>
+                     <h4 class="mt0 mb0 title f-bold"><b>Cutie Pack</b>
                         <span class="price"><big> 49<sup>95</sup></big></span>
                      </h4>
                      <p class="mt0 mb0"></p>
-                     <p>Je huis opvrolijken met wat groene huisgenoten én onze kwekers uit de plant helpen?
-                        Dat
-                        is exact wat dit plantpakket je oplevert!
-                     </p>
-                     <p>Door het sluiten van de grenzen en veel winkels kunnen kweke...</p>
+                     <p>This cute little plant pack takes all of the guess work out of gift giving for those plant lovers your life.
                   </div>
                </li>
             </ul>
       </section>
-      </div>
       <!-- Signup-->
       <section class="signup-section" id="signup">
          <div class="container">

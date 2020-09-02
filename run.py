@@ -5,9 +5,15 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
 
+#print(os.environ)
+for k, v in os.environ.items():
+    print(f'{k}={v}')
+
 app = Flask(__name__) 
 app.config["MONGO_DBNAME"] = 'plantstoreDB'
-app.config["MONGO_URI"] = 'mongodb+srv://marshmello88:Thecharlie88@plantcluster.nhl30.mongodb.net/plantstoreDB?retryWrites=true&w=majority'
+#app.config["MONGO_URI"] = 'mongodb+srv://marshmello88:Thecharlie88@plantcluster.nhl30.mongodb.net/plantstoreDB?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = os.environ['MONGO_URI']
+
 
 mongo = PyMongo(app)
 
@@ -38,7 +44,7 @@ def login():
           flash('You were successfully logged in', 'message') 
           return redirect(url_for('index'))
         else:
-          flash('Invalid password provided', 'error')
+          flash('Invalid password or username provided', 'error')
           return render_template("login.html")
       except:
           flash('Not a known user', 'error')
@@ -99,6 +105,7 @@ def shopping_cart():
     print(request.method, "++++++++++++++++++++")
     user = session.get("username")
     if not user:
+        flash("Please login to view your cart", 'message')
         return redirect(url_for("login"))
     if request.method == 'GET':
         all_products = []
@@ -119,9 +126,9 @@ def shopping_cart():
         return render_template("cart.html", products=all_products)
     #Pass request for the product the user wants to delete
     if request.method == 'POST':
-        #request gets the value from form and we are getting quantity
-        #124 if it doesnt have quantity we want to delete and remove product id
-        #128 finds product id we try to update and sets quantity to the new quantity to the new one that we have
+        #request gets the value from form (get quantity)
+        #124 if it doesnt have quantity >> delete and remove product id
+        #128 finds product id >> tries to update and sets quantity to the new quantity 
         req = request.form.to_dict()
         quantity = req.get("quantity")
         product_id = request.args.get('product_id')
@@ -139,22 +146,28 @@ def shopping_cart():
  
 @app.route('/add_cart', methods=['POST'])
 def add_cart():
-    #insert into cart collection + redirect to /cart
+    #insert into cart collection 
     #fetch user_id from session
-    #to fetch items of the cart collection use mongodb '.find({user_id:...})' then loop through each cart item and fetch the product using '.find_one' with the product id.
-    print(request.form)
-    user = session["username"] #fetch user from session
+    #insert username into cart collection through name attribute
+    #to fetch items of the cart collection:  mongodb '.find({user_id:...})' 
+    #print(request.form)
+    #user = session["username"] #fetch user from session
+    user = session.get("username")
+    if not user:
+        flash("Please login in order to make a purchase", 'message')
+        return redirect(url_for("login"))
     print(user, "++++++++++++logged in user")
-    cart_request = request.form.to_dict() #to_dict returns a dictionary
-    print(cart_request["product_id"])
-    product = mongo.db.cart.find_one({"product_id": cart_request["product_id"]}, {"action": user}) 
+    cart_request = request.form.to_dict() #returns a dictionary
+    #print(cart_request["product_id"])
+    product = mongo.db.cart.find_one({"product_id": cart_request["product_id"]}, {"action": user}) # fetch items of the cart collection
     if product is None:
         flash("Item(s) added to cart", 'message')
     if product:
+        print(product, "++++++++++++PRODUCT")
         flash('Already added to cart', 'message')
         return redirect(url_for('shop')) 
     cart_request['action'] = user #add to a dictionary by specifying the key and value (['key'] = value )
-    print(cart_request, "+++++++++cart")
+    #print(cart_request, "+++++++++cart")
     cart = mongo.db.cart 
     cart.insert_one(cart_request)
     return redirect(url_for('shop'))

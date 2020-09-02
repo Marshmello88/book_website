@@ -55,12 +55,3 @@
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
 
-// PLANT QUIZ
-
-// Close button for alerts
-
-$(function() {
-   $('#closemodal').click(function() {
-    $('#modalwindow').modal('hide');
-});
-});

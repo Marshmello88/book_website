@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<header class="masthead">
+<header class="masthead mastheadlogin">
    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto accountCol">
+      <div class="mx-auto accountCol regCol">
          <div class="row">
-            <div class="col-6">
+            <div class="col-6 registertitle">
                <h2> Register </h2>
-               <form action="/register" method="POST" onsubmit="return validate()">
-                  <label for="username">Username or E-mail&nbsp;<span class="required-reg">*</span></label><br> 
-                  <input type="text" name="username"></p>
-                  <label for="username">Password&nbsp;<span class="required-reg">*</span></label><br>
-                  <input type="password" name="password" id="password" class="required-reg"> <br><br>
-                  <label for="username">Confirm Password&nbsp;<span class="required-reg">*</span></label><br> 
-                  <input type="password" name="cpassword" id="cpassword"> <br><br>
-                  <!--<p><input type="submit" value="Register"></p>-->
-                  <button class="btn btn-default login-button" value="Register" type="submit">Register</button> <br> <br>
+               <form class="registeraccount" action="/register" method="POST" onsubmit="return validate()">
+                  <p class="formRow">
+                     <label for="username">Username or E-mail&nbsp;<span class="required-reg">*</span></label><br> 
+                     <input class="form-control" type="text" name="username">
+                  </p>
+                  </p>
+                  <p class="formRow">
+                     <label for="username">Password&nbsp;<span class="required-reg">*</span></label><br>
+                     <input class="form-control" type="password" name="password" id="password" class="required-reg">
+                  </p>
+                  <p class="formrow">
+                     <label for="username">Confirm Password&nbsp;<span class="required-reg">*</span></label><br> 
+                     <input class="form-control" type="password" name="cpassword" id="cpassword"></br>
+                     <button class="btn btn-default login-button" value="Register" type="submit">Register</button> <br> 
+                  </p>
                   <p> Or you can <a href="/login">Log in here</a></p>
             </div>
          </div>
