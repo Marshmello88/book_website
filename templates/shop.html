@@ -45,14 +45,13 @@
       </nav>
       <!--Alert message to provide feedback to user-->
       <div class="alerts-wrapper">
-         {% with messages = get_flashed_messages(with_categories=true) %}
-         {% if messages %}
-         {% for category, message in messages %}
-         <div class="row no-gutters">
-            <div class="col-12">
-               <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
-                  <span class="flashes">{{ message }}</span>
-               </div>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="row no-gutters">
+         <div class="col-12">
+            <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
+               <span class="flashes">{{ message }}</span>
             </div>
          </div>
          {% endfor %}
@@ -74,7 +73,7 @@
                      <!--<button class="carticon" type="button" class="btn btn-primary"><i class="fas fa-shopping-cart fa-2x"></i></button>-->
                      <!--<div class="carticon"> <i class="fas fa-shopping-cart fa-2x"></i></div>-->
                      <div class="product-image flex-center flex">
-                        <img src="{{ url_for('static', filename=product.img_url) }}">
+                        <img alt="plant selection" src="{{ url_for('static', filename=product.img_url) }}">
                      </div>
                      <div class="product-info">
                         <ul class="product-stats">
@@ -88,13 +87,13 @@
                            <li><span class="icon" style="background-color: #fff"><i class="fas fa-cat"></i> {{product.pets}} </span>
                            </li>
                         </ul>
-                        <header class="product-grid-item__header mt8">
-                           <div class="product-grid-item-title-container">
+                        <header class="productgrid-itemheader">
+                           <div>
                               <span class="subtitle">{{product.name}}</span>
                               <h4 class="plantname"><b>{{product.title}}</b></h4>
                            </div>
-                           <span class="price f-bold">
-                           <big>{{product.price}}</big>
+                           <span class="price f-bold" style="font-size:1.5em">
+                           {{product.price}}
                            </span>
                         </header>
                      </div>
@@ -103,17 +102,18 @@
                {% endfor %}
                <li class="list-item product-set">
                   <div class="product-set-image">
-                     <img src="{{ url_for('static', filename='assets/img/cutiebox.gif') }}">
+                     <img alt="a box of cacti" src="{{ url_for('static', filename='assets/img/cutiebox.gif') }}">
                   </div>
                   <div class="product-info">
                      <h4 class="mt0 mb0 title f-bold"><b>Cutie Pack</b>
-                        <span class="price"><big> 49<sup>95</sup></big></span>
+                        <span class="price" style="font-size:1.2em">49<sup>95</sup></span>
                      </h4>
                      <p class="mt0 mb0"></p>
                      <p>This cute little plant pack takes all of the guess work out of gift giving for those plant lovers your life.
                   </div>
                </li>
             </ul>
+         </div>
       </section>
       <!-- Signup-->
       <section class="signup-section" id="signup">

@@ -1,6 +1,10 @@
                             <!--class="btn btn-default login-button" <i class="fas fa-trash-alt"></i>-->
-
-
+<form action="{{ url_for('shopping_cart', product_id=item["_id"]) }}" method="POST">
+                           <input class="input-field text-center" type="number" name="quantity" value={{item["quantity"]}} >
+                           <button class="updatecart" type="submit" name="action"><i class="fas fa-sync-alt"></i></button>
+                           </form>
+<header class="productgrid-itemheader">
+                           <div class="product-grid-item-title-container">
 <div class="text-block">
 	<div class="text-container">
 		<!--<p> Whether you’re in the market for a <strong>big</strong>, leafy plant to anchor your living room or a <strong>pint-sized</strong> waxy <strong>succulent</strong> for your desk, we’re <strong>delighted</strong> to be a part of your road to <strong>happiness</strong>. </p>-->

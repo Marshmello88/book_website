@@ -141,6 +141,8 @@ def shopping_cart():
         flash('Your cart was updated', 'message')
         return redirect(url_for('shopping_cart'))
     #update quantity
+        user_cart = mongo.db.cart.find({"action": user}) 
+        product = mongo.db.cart.find_one({"product_id": cart_request["product_id"], "action": user})
 
    
  
@@ -159,7 +161,7 @@ def add_cart():
     print(user, "++++++++++++logged in user")
     cart_request = request.form.to_dict() #returns a dictionary
     #print(cart_request["product_id"])
-    product = mongo.db.cart.find_one({"product_id": cart_request["product_id"]}, {"action": user}) # fetch items of the cart collection
+    product = mongo.db.cart.find_one({"product_id": cart_request["product_id"], "action": user}) # fetch items of the cart collection
     if product is None:
         flash("Item(s) added to cart", 'message')
     if product:

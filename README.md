@@ -1,7 +1,7 @@
 #E-commerce Plant Webshop
+
 For Codeinstitute's Data Centric Development Milestone Project.
 
-#About
 
 #Main Technologies used:
 
@@ -11,8 +11,7 @@ For Codeinstitute's Data Centric Development Milestone Project.
 #Requirements for the project:
 
 - Data handling: Build a MongoDB-backed Flask project for a web application that allows users to store and manipulate 
-data records about a particular domain. If you are considering using a different database, please discuss that with your 
-mentor first and inform Student Care.
+data records about a particular domain. 
 
 - Database structure: Put some effort into designing a database structure well-suited for your domain. Make sure to put 
 some thought into the nesting relationships between records of different entities.
@@ -22,8 +21,7 @@ some thought into the nesting relationships between records of different entitie
 
 - Use of technologies: Use HTML and custom CSS for the website's front-end.
 
-- Structure: Incorporate a main navigation menu and structured layout (you might want to use Materialize or Bootstrap 
-to accomplish this).
+- Structure: Incorporate a main navigation menu and structured layout.
 
 - Documentation: Write a README.md file for your project that explains what the project does and the value that it 
 provides to its users.
@@ -38,49 +36,8 @@ dependencies) in the README.
 
 - Make sure to not include any passwords or secret keys in the project repository.
 
-
-#Shopping cart requirements + setup
-
-
-First thing I did was plan the data structure for the cart and figure out how I was going to save it.  
-
-for tracking a cart, I am using the following data model:
- - id (the unique id)
- - user_id
- - product_id
- - quantity
- 
-
- So basically whenever I add a product to the cart, I'm just inserting a row in to the cart 
- table with those properties.
- 
-I went through the following steps: 
- 
-1. Add to Cart button is in a form. Include hidden field for `product_id` with the value set to the product id.
-2. Connect current username to the "name" attribute on the cart button
-3. Form submits to the `/add_cart` route
-4. In the `add_cart` route, I then insert into the cart collection
-5. I fetch the `user_id` from the session.
-6. I fetch the items of the cart in the `cart` route.
-7. I loop through each cart item, and fetch the prodct using `.find_one` with the product id.
-
-
-#Stuff to add in the future
-
-- add a search function
-- add a filter function (based on names/preferences/difficulty etc)
-- add a quiz
-- add a page for every plant with accurate description
-- allow users to process payment 
-- allow users to buy without logging in
-
-
-#Demo
-
-![front page](assets/img/Capture.jpg?raw=true)
-![shop display](assets/img/Capture2.jpg?raw=true)
-
 #UX
+
 The central target audience for HappyPlants are people who want to buy plants or people in search of gifts. 
 These are people of all ages. User goals are the following:
 
@@ -104,6 +61,64 @@ through adobe colorwheel. The information/products presented on the webpage are 
 the user to navigate. However in the future I would also like to add more product details.
 
 
+
+#Shopping cart requirements + setup
+
+
+First thing I did was plan the data structure for the cart and figure out how I was going to save it.  
+
+for tracking a cart, I am using the following data model:
+
+ - id (the unique id)
+
+ - user_id
+
+ - product_id
+
+ - quantity
+ 
+
+ So basically whenever I add a product to the cart, I'm just inserting a row in to the cart 
+ table with those properties.
+ 
+I went through the following steps: 
+ 
+1. Add to Cart button is in a form. Include hidden field for `product_id` with the value set to the product id.
+
+2. Connect current username to the "name" attribute on the cart button
+
+3. Form submits to the `/add_cart` route
+
+4. In the `add_cart` route, I then insert into the cart collection
+
+5. I fetch the `user_id` from the session.
+
+6. I fetch the items of the cart in the `cart` route.
+
+7. I loop through each cart item, and fetch the prodct using `.find_one` with the product id.
+
+
+#Stuff to add in the future
+
+- add a search function
+
+- add a filter function (based on names/preferences/difficulty etc)
+
+- add a quiz
+
+- add a page for every plant with accurate description
+
+- allow users to process payment 
+
+- allow users to buy without logging in
+
+
+#Demo
+
+![front page](assets/img/Capture.jpg?raw=true)
+![shop display](assets/img/Capture2.jpg?raw=true)
+
+
 #Wireframes
 
 These wireframes were drawn up by hand during the initital stages of the planning process. Since I mostly 
@@ -114,6 +129,7 @@ the cart follow pretty basic schematics.
 ![front page](assets/img/wireframes_shop.jpg?raw=true)
 
 #Testing
+
 I have used the following validation services to check the validity of my code:
 
 W3C Markup Validation was used to validate HTML.
@@ -219,7 +235,8 @@ Can a user add the same item mulitple times?
 -Yes & No/Partial Pass
 
 At this stage it's only possible to select a quantity and add it to the cart only once from the shopping page.
-A user CAN however edit the amount of a given item in the cart page.
+A user CAN however edit the amount of a given item in the cart page. When deleted from the cart, the user can then
+re-add the item from the shop again.
 
 IV. THE CART
 
@@ -247,12 +264,20 @@ Can a user delete an item?
 
 -Yes/Pass
 
-Can a user re-add an item which was deleted from the cart page?
+Can a user add an item to the cart without logging in?
 
 -No
 
-Currently when a user deletes an item, that item cannot be re-added from the shop page. This still needs to be worked out.
+At this stage a user can only purchase an item when the user is logged in. This obviously diminishes 
+the quality of the user's interaction with the webshop, so in do intend to add the option to buy without
+having to register the future.
 
+Does the cart display a message for when a cart is empty?
+
+-No
+
+This feature hasn't been added yet but is of course useful to add in the future as it would communicate
+a message to the user that the cart is empty. 
 
 #Deployment to Heroku
 

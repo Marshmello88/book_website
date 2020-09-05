@@ -1,6 +1,9 @@
-@charset "UTF-8";
-
-/* Larger dependency: Grayscale v6.0.1 (https://startbootstrap.com/themes/grayscale) */
+/*@charset "UTF-8";*/
+/* Sources:
+Larger dependency Bootstrap Theme: Grayscale v6.0.1 (https://startbootstrap.com/themes/grayscale) 
+www.plantsome.nl
+https://www.thesill.com
+https://www.housebeautiful.com/lifestyle/gardening/g31355906/easy-low-maintenance-plants/ */
 
 
 /* **************General Section********** */
@@ -54,13 +57,10 @@ body {
 	display: none;
 	position: absolute;
 	min-width: 170px;
-	/*box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);*/
 	z-index: 1;
 	padding: 1.5rem 1rem;
 }
 
-.dropbtnshop,
-.dropbtnplantcare,
 .dropbtnbegin {
 	color: #64a19d;
 }
@@ -84,7 +84,6 @@ body {
 article,
 footer,
 header,
-main,
 nav,
 section {
 	display: block;
@@ -197,53 +196,6 @@ hr {
 	margin-left: auto;
 }
 
-@media (min-width: 576px) {
-	.container {
-		max-width: 540px;
-	}
-}
-
-@media (min-width: 768px) {
-	.container {
-		max-width: 720px;
-	}
-}
-
-@media (min-width: 992px) {
-	.container {
-		max-width: 960px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-		max-width: 1140px;
-	}
-}
-
-@media (min-width: 576px) {
-	.container {
-		max-width: 540px;
-	}
-}
-
-@media (min-width: 768px) {
-	.container {
-		max-width: 720px;
-	}
-}
-
-@media (min-width: 992px) {
-	.container {
-		max-width: 960px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-		max-width: 1140px;
-	}
-}
 
 .row {
 	display: flex;
@@ -394,7 +346,7 @@ hr {
 .nav-link-shop {
 	display: block;
 	padding: 0.5rem 1rem;
-    color: #64a19d;
+	color: #64a19d;
 }
 
 .nav-link:hover,
@@ -916,13 +868,12 @@ a.text-color:focus {
 }
 
 .masthead {
+    background: url("../assets/img/blue.jpg");
 	position: relative;
 	width: 100%;
 	height: auto;
 	min-height: 35rem;
 	padding: 15rem 0;
-	background: /*linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%),*/
-	url("../assets/img/blue.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
@@ -976,7 +927,6 @@ a.text-color:focus {
 .section-two {
 	padding-top: 8rem;
 	padding-bottom: 4rem;
-	/*background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);*/
 	background-color: #fff !important;
 }
 
@@ -1013,8 +963,7 @@ a.text-color:focus {
 
 .signup-section {
 	padding: 10rem 0;
-	background: /*linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%),*/
-	url("../assets/img/sdfs.jpg");
+	background: url("../assets/img/sdfs.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
@@ -1075,7 +1024,6 @@ a.text-color:focus {
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 100%;
 	line-height: 3rem;
-	/*color: rgba(255, 255, 255, 0.3);*/
 }
 
 .contact-section .social a:hover {
@@ -1091,7 +1039,7 @@ a.text-color:focus {
 }
 
 
-/* ***************************************account page******************************************** */
+/* ******************************* account page ******************************** */
 
 .loginAccount,
 .registeraccount {
@@ -1114,15 +1062,15 @@ a.text-color:focus {
 	border-radius: .25rem;
 }
 
-alert-dismissible .close {
+/*alert-dismissible .close {
 	position: absolute;
 	top: 0;
 	right: 0;
 	padding: .75rem 1.25rem;
 	color: inherit;
-}
+}*/
 
-.close {
+/*.close {
 	float: right;
 	font-size: 1.5rem;
 	font-weight: 700;
@@ -1130,22 +1078,22 @@ alert-dismissible .close {
 	color: #000;
 	text-shadow: 0 1px 0 #fff;
 	opacity: .5;
-}
+}*/
 
-button.close {
+/*button.close {
 	padding: 0;
 	background-color: transparent;
 	border: 0;
 	-webkit-appearance: none;
-}
+}*/
 
-#close:hover {
+/*#close:hover {
 	float: right;
 	display: inline-block;
 	padding: 2px 5px;
 	background: #ccc;
 	color: #fff;
-}
+}*/
 
 .alert.message {
 	color: #155724;
@@ -1238,23 +1186,17 @@ button.close {
 }
 
 .updatecart {
-	/*font-size: 18px;
-	background-color: #64a19d;
-	color: #fff;*/
-    background-color: transparent;
-    border: 0;
-    transition: transform .2s; /* Animation */
+	background-color: transparent;
+	border: 0;
+	transition: transform .2s;
 }
-
 
 .updatecart:hover {
-  transform: scale(1.5);
+	transform: scale(1.5);
 }
 
-
 #shop-body {
-	background-color: /*#f2f0ef;*/
-	#fff;
+	background-color:#fff;
 }
 
 .carticon {
@@ -1266,8 +1208,6 @@ button.close {
 	top: 8px;
 	left: 8px;
 	background: transparent;
-	/*border: none;
-    outline: none;*/
 }
 
 .shop-wrapper {
@@ -1276,7 +1216,7 @@ button.close {
 	margin-top: 80px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 100%;
+	/*width: 100%;*/
 	width: calc(100% - 80px);
 	max-width: 1150px;
 	position: relative;
@@ -1324,7 +1264,8 @@ button.close {
 	overflow: hidden;
 }
 
-.product-grid-item__header {
+/*source: plantsome */
+.productgrid-itemheader {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -1341,7 +1282,6 @@ button.close {
 
 .product-info {
 	position: absolute;
-	/*width: calc(100% - 16px);*/
 	bottom: 8px;
 	left: 0;
 	margin-left: 4.5px;
@@ -1356,25 +1296,23 @@ button.close {
 	margin-bottom: 8px;
 }
 
-
-
 .shop-display {
 	display: flex !important;
 }
 
-.text-block {
+/*.text-block {
 	z-index: 2;
 	line-height: 1.5;
-	font-size: 2.5rem;
+	font-size: 2.5rem;*/
 	/*font-family: "grad", serif;*/
-	padding: 0 3rem;
+	/*padding: 0 3rem;
 	text-align: center;
 	max-width: 1200px;
 	margin: 3rem auto 4rem auto;
 	margin-bottom: 4rem;
-}
+}*/
 
-.text-container {
+/*.text-container {
 	position: relative;
 	z-index: 2;
 	/*remove this to recenter the text*/
@@ -1382,15 +1320,15 @@ button.close {
 height: 500px;
 display: flex;
 flex-direction: column;
-justify-content: center;*/
-}
+justify-content: center;
+}*/
 
-.page-separator {
+/*.page-separator {
 	border-top: solid black 2px;
 	width: calc(100% - 80px);
 	margin-left: auto;
 	margin-right: auto;
-}
+}*/
 
 
 /*.block-picture {
@@ -1407,13 +1345,13 @@ justify-content: center;*/
 
 }*/
 
-.text-block p strong {
+/*.text-block p strong {
 	font-weight: inherit;
 	background-image: linear-gradient(to right, rgb(203, 255, 15) 100%, transparent 100%);
 	background-position: 0px 0.71em;
 	background-repeat: repeat-x;
 	background-size: 1em 0.25em;
-}
+}*/
 
 .smiley {
 	font-size: 30px;
@@ -1460,7 +1398,7 @@ justify-content: center;*/
 	padding: 11px 20px;
 }
 
-.easycare-items {
+/*.easycare-items {
 	width: calc(66.666% - 30px);
 	position: relative;
 	height: 540px;
@@ -1469,9 +1407,9 @@ justify-content: center;*/
 	margin-left: 15px;
 	margin-right: 15px;
 	background-color: #afcecd;
-}
+}*/
 
-.petfriendly-item {
+/*.petfriendly-item {
 	position: relative;
 	width: calc(33.333% - 30px);
 	height: 540px;
@@ -1480,17 +1418,16 @@ justify-content: center;*/
 	margin-left: 15px;
 	margin-right: 15px;
 	background-color: #afcecd;
-}
+}*/
 
-.petplant-image img {
+/*.petplant-image img {
 	max-height: 95%;
 	max-width: 100%;
 	justify-content: center;
 	object-fit: cover;
-}
+}*/
 
-.easycare-content {
-	/*background-color: white;*/
+/*.easycare-content {
 	position: absolute;
 	width: calc(100% - 16px);
 	bottom: 8px;
@@ -1499,13 +1436,13 @@ justify-content: center;*/
 	margin-bottom: -8px;
 	display: flex;
 	flex-flow: column;
-}
+}*/
 
-.easycare-item-img img {
+/*.easycare-item-img img {
 	width: 100%;
 	object-fit: contain;
 	vertical-align: middle;
-}
+}*/
 
 .text-beginner-plants {
 	position: absolute;
@@ -1526,12 +1463,10 @@ justify-content: center;*/
 }
 
 .plantcare-section {
-	/*margin-top: 9rem;*/
-padding-top: 9rem;
+	padding-top: 9rem;
 }
 
 .care {
-	/*background: url("../assets/img/plant-care.jpg");*/
 	text-align: center;
 	align-items: center;
 	padding-bottom: 10rem;
@@ -1580,17 +1515,18 @@ padding-top: 9rem;
 	margin-bottom: 4rem;
 }
 
-.extrastrong {
+/*.extrastrong {
 	background-image: linear-gradient(to right, rgb(198, 217, 169) 100%, transparent 100%);
 	background-position: 0px 0.71em;
 	background-repeat: repeat-x;
 	background-size: 1em 0.25em;
-}
+}*/
 
 .leafy-bg {
 	background-image: url("../assets/img/leafy-bg-2.png"), url("../assets/img/bg-leaf.png");
 }
 
+/*source: the sill */
 .articleform {
 	background-repeat: no-repeat;
 	background-size: 350px, 400px;
@@ -1617,7 +1553,7 @@ padding-top: 9rem;
 	overflow: auto;
 }
 
-#btnEmpty {
+/*#btnEmpty {
 	background-color: #ffffff;
 	border: #d00000 1px solid;
 	padding: 5px 10px;
@@ -1626,7 +1562,7 @@ padding-top: 9rem;
 	text-decoration: none;
 	border-radius: 3px;
 	margin: 10px 0px;
-}
+}*/
 
 .tbl-cart {
 	font-size: 0.9em;
@@ -1671,7 +1607,7 @@ padding-top: 9rem;
 }
 
 .quantity-block {
-    margin-left: 1rem;
+	margin-left: 1rem;
 }
 
 #product-grid {
@@ -1688,7 +1624,7 @@ padding-top: 9rem;
 }
 
 .cart-content-header {
-padding-bottom:5rem;
+	padding-bottom: 5rem;
 }
 
 .cart-content-section {
@@ -1701,8 +1637,8 @@ padding-bottom:5rem;
 }
 
 .mastheadcart {
-    background-color: #A3D9D9;
-    background-image: none;
+	background-color: #A3D9D9;
+	background-image: none;
 }
 
 .cart-content {
@@ -1723,17 +1659,16 @@ padding-bottom:5rem;
 	background-color: #64a19d;
 	color: #fff;
 	padding: 11px 20px;*/
-    
-    color: #fff;
-    padding: 11px 20px;
-    padding-bottom: 10px;
-    background-color: #ff9393;
-    border-color: #ff9393;
-    font-weight: 700;
+	color: #fff;
+	padding: 11px 20px;
+	padding-bottom: 10px;
+	background-color: #ff9393;
+	border-color: #ff9393;
+	font-weight: 700;
 }
 
 .checkoutwrapper {
-    padding-top: 3rem;
+	padding-top: 3rem;
 }
 
 .cart-content-container {
@@ -1759,9 +1694,8 @@ padding-bottom:5rem;
 	width: 100%;
 	padding: 0;
 	border-bottom: 1px solid #bebebe;
-    margin-bottom: 3rem;
+	margin-bottom: 3rem;
 }
-
 
 .cartimg {
 	max-height: 64px;
@@ -1772,14 +1706,14 @@ padding-bottom:5rem;
 }
 
 .deletecartitembtn {
-background-color: transparent;
-border: 0;
-width: 30px;
-transition: transform .2s; /* Animation */
+	background-color: transparent;
+	border: 0;
+	width: 30px;
+	transition: transform .2s;
 }
 
 .deletecartitembtn:hover {
-  transform: scale(1.5);
+	transform: scale(1.5);
 }
 
 .header-amount {
@@ -1800,11 +1734,6 @@ transition: transform .2s; /* Animation */
 	font-size: 14px;
 }
 
-/*.input-quantity {
-	border: 1px solid #d7d2cb;
-	margin-bottom: 0;
-	max-width: 6.25rem;
-}*/
 
 .input-field {
 	width: 42px;
@@ -1819,19 +1748,6 @@ transition: transform .2s; /* Animation */
 }
 
 
-
-.minus-button,
-.plus-button {
-	color: #2d2a24;
-	/* padding: .5rem .625rem;*/
-	background-color: #fff;
-	border: 1px solid #b3b3b3;
-	float: left;
-	height: 2.4rem;
-}
-
-.input-button {}
-
 .display-block {
 	margin-right: 0;
 }
@@ -1843,20 +1759,19 @@ transition: transform .2s; /* Animation */
 	margin: 0 0 32px;
 }
 
-.total-amount-text {
+/*.total-amount-text {
 	font-size: 1.25rem;
 	font-weight: 700;
 	float: left;
 	width: 89%;
 	text-align: right;
 	margin: 2px 0 0;
-}
+}*/
 
 
-/* **************** easy plants ************ */
+/* **************** Plants for beginners ************ */
 
 .easyplantlist {
-	/*float: left;*/
 	margin-right: 2%;
 	margin-left: auto;
 	width: 66%;
@@ -1876,18 +1791,15 @@ transition: transform .2s; /* Animation */
 
 .slideheader {
 	margin-bottom: 0;
-	/*width: 40.5%;*/
-	/*float: right;*/
 }
 
 .slideheadernr {
-	font-family: Orelo Standard Bold,Times,Serif;
-	font-size: 5.625rem;
+	font-size: 5.600rem;
 	line-height: 1;
-	color: /*#dbe125*/
-	#A3D9D3;
+	color:#A3D9D3;
 	display: inline-block;
 	text-align: left;
+    font-family: Orelo Standard Bold, Times, Serif;
 	margin-bottom: 0;
 }
 
@@ -1897,7 +1809,6 @@ transition: transform .2s; /* Animation */
 
 .outermediawrapper {
 	overflow: hidden;
-	/*float: left;*/
 	margin-right: 2%;
 }
 
@@ -1906,7 +1817,6 @@ transition: transform .2s; /* Animation */
 }
 
 .slideinner {
-	/*float: left;*/
 	margin-right: 2%;
 	width: 55%;
 }
@@ -1935,453 +1845,416 @@ transition: transform .2s; /* Animation */
 	margin-top: 8rem;
 }
 
-/*.pricebg {
-    max-width: 20px;
-    padding: 0;
-    background-color: white;
-    }*/
 
 /* ********************** QUERIES ********************* */
 
+
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 
+
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-      .articleform {
-          padding: 0 10%;
-      }
-      .section-three {
-          padding: 0;
-      }
-      .text-beginner-plants {
-          position: relative;
-          padding-bottom: 4rem;
-          padding-left: 2rem;
-          padding-right: auto;
-      }
-      .section-two {
-          padding-top: 3rem;
-          padding-bottom: 0;
-      }
-      .masthead .container {
-          display: block!important;
-      }
-      .masthead h1 {
-          font-size: 1.5rem;
-      }
-      .d-flex {
-          display: block!important;
-      }
-      .social {
-          text-align: center;
-      }
-      .signupmargin {
-          margin-left: auto;
-      }
-      .leafy-bg {
-          background-image: none;
-      }
-      .section-title, .section-subtitle {
-          padding: 0 10%;
-          margin-bottom: 2rem;
-      }
-      .plantcare-section {
-          padding-top: 0;
-      }
-      .care img {
-          max-width: 100%;
-      }
-      .articleform {
-          margin-top: 1rem;
-      }
-      .easyplantlist {
-          margin:0;
-          width: 100%;
-      }
-      .slideheadtxt {
-          text-align: center;
-      }
-      .slideinner {
-          width:100%;
-          margin-right: 0;
-      }
-      .slidedescriptor {
-          text-align: center;
-          width: 90%;
-          margin-left: 1rem;
-          margin-right: auto;
-      }
-      .list-item {
-          width: calc(100% - 8px);
-      }
-      .shop-wrapper {
-          width: 100%;
-          margin-top: 3rem;
-      }
-      .shop-display {
-          padding:0;
-      }
-}
 
-/* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-      
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-
-}
+/*@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	.articleform {
+		padding: 0 10%;
+	}
+	.section-three {
+		padding: 0;
+	}
+	.text-beginner-plants {
+		position: relative;
+		padding-bottom: 4rem;
+		padding-left: 2rem;
+		padding-right: auto;
+	}
+	.section-two {
+		padding-top: 3rem;
+		padding-bottom: 0;
+	}
+	.masthead .container {
+		display: block!important;
+	}
+	.masthead h1 {
+		font-size: 1.5rem;
+	}
+	.d-flex {
+		display: block!important;
+	}
+	.social {
+		text-align: center;
+	}
+	.signupmargin {
+		margin-left: auto;
+	}
+	.leafy-bg {
+		background-image: none;
+	}
+	.section-title,
+	.section-subtitle {
+		padding: 0 10%;
+		margin-bottom: 2rem;
+	}
+	.plantcare-section {
+		padding-top: 0;
+	}
+	.care img {
+		max-width: 100%;
+	}
+	.articleform {
+		margin-top: 1rem;
+	}
+	.easyplantlist {
+		margin: 0;
+		width: 100%;
+	}
+	.slideheadtxt {
+		text-align: center;
+	}
+	.slideinner {
+		width: 100%;
+		margin-right: 0;
+	}
+	.slidedescriptor {
+		text-align: center;
+		width: 90%;
+		margin-left: 1rem;
+		margin-right: auto;
+	}
+	.list-item {
+		width: calc(100% - 8px);
+	}
+	.shop-wrapper {
+		width: 100%;
+		margin-top: 3rem;
+	}
+	.shop-display {
+		padding: 0;
+	}
+}*/
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-      .articleform {
-          padding: 0 10%;
-      }
-      .section-three {
-          padding: 0;
-      }
-      .text-beginner-plants {
-          position: relative;
-          padding-bottom: 4rem;
-          padding-left: 2rem;
-          padding-right: auto;
-      }
-      .section-two {
-          padding-top: 3rem;
-          padding-bottom: 0;
-      }
-      .masthead .container {
-          display: block!important;
-      }
-      .masthead h1 {
-          font-size: 1.5rem;
-          margin-bottom: 5rem;
-      }
-      .d-flex {
-          display: block!important;
-      }
-      .social {
-          text-align: center;
-      }
-      .signupmargin {
-          margin-left: auto;
-      }
-      .leafy-bg {
-          background-image: none;
-      }
-      .section-title, .section-subtitle {
-          padding: 0 10%;
-          margin-bottom: 2rem;
-      }
-      .plantcare-section {
-          padding-top: 7rem;
-      }
-      .care img {
-          max-width: 100%;
-      }
-      .articleform {
-          margin-top: 1rem;
-      }
-      .easyplantlist {
-          margin:0;
-          width: 100%;
-      }
-      .slideheadtxt {
-          text-align: center;
-      }
-      .slideinner {
-          width:100%;
-          margin-right: 0;
-      }
-      .slidedescriptor {
-          text-align: center;
-          width: 90%;
-          margin-left: 1rem;
-          margin-right: auto;
-      }
-      .list-item {
-          width: calc(100% - 8px);
-      }
-      .shop-wrapper {
-          width: 100%;
-          margin-top: 3rem;
-      }
-      .shop-display {
-          padding:0;
-      }
-      .logintitle,.registertitle {
-         margin-left: auto;
-         margin-right: auto;
-      }
-      .accountCol {
-          margin-bottom: 2rem;
-      }
-    .mastheadlogin {
-        padding: 11rem 0;
-    }
-    .regCol {
-        margin-top:0;
-    }
-    .outermediawrapper {
-        margin-right: 0;
-    }
-    .display-block {
-        display: none;
-    }
-    .itemname {
-        font-size: 0.8rem;
-    }
-    .cart-content {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-    }
-    .header-products {
-padding-right:2rem;    
-}
-.header-amount {
-    padding-right: 1rem;
-}
-.cart-header-row {
-    display: none !important;
-}
-.products-header-container {
-    padding-right: 1rem;
-    padding-left: auto;
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+	.articleform {
+		padding: 0 10%;
+	}
+	.section-three {
+		padding: 0;
+	}
+	.text-beginner-plants {
+		position: relative;
+		padding-bottom: 4rem;
+		padding-left: 2rem;
+		padding-right: auto;
+	}
+	.section-two {
+		padding-top: 3rem;
+		padding-bottom: 0;
+	}
+	.masthead .container {
+		display: block!important;
+	}
+	.masthead h1 {
+		font-size: 1.5rem;
+		margin-bottom: 5rem;
+	}
+	.d-flex {
+		display: block!important;
+	}
+	.social {
+		text-align: center;
+	}
+	.signupmargin {
+		margin-left: auto;
+	}
+	.leafy-bg {
+		background-image: none;
+	}
+	.section-title,
+	.section-subtitle {
+		padding: 0 10%;
+		margin-bottom: 2rem;
+	}
+	.plantcare-section {
+		padding-top: 7rem;
+	}
+	.care img {
+		max-width: 100%;
+	}
+	.articleform {
+		margin-top: 1rem;
+	}
+	.easyplantlist {
+		margin: 0;
+		width: 100%;
+	}
+	.slideheadtxt {
+		text-align: center;
+	}
+	.slideinner {
+		width: 100%;
+		margin-right: 0;
+	}
+	.slidedescriptor {
+		text-align: center;
+		width: 90%;
+		margin-left: 1rem;
+		margin-right: auto;
+	}
+	.list-item {
+		width: calc(100% - 8px);
+	}
+	.shop-wrapper {
+		width: 100%;
+		margin-top: 3rem;
+	}
+	.shop-display {
+		padding: 0;
+	}
+	.logintitle,
+	.registertitle {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.accountCol {
+		margin-bottom: 2rem;
+	}
+	.mastheadlogin {
+		padding: 11rem 0;
+	}
+	.regCol {
+		margin-top: 0;
+	}
+	.outermediawrapper {
+		margin-right: 0;
+	}
+	.display-block {
+		display: none;
+	}
+	.itemname {
+		font-size: 0.8rem;
+	}
+	.cart-content {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+	}
+	.header-products {
+		padding-right: 2rem;
+	}
+	.header-amount {
+		padding-right: 1rem;
+	}
+	.cart-header-row {
+		display: none !important;
+	}
+	.products-header-container {
+		padding-right: 1rem;
+		padding-left: auto;
+	}
 }
 
-}
 
 /* Landscape only */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-      .signup-section .form-inline input {
-          margin-bottom: 2rem!important;
-      }
-      .masthead h1 {
-          padding-top: 0!important;
-          font-size: 2.5rem;
-      }
-        .list-item {
-         width: calc(50% - 30px)!important;
-      }
 
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+	.signup-section .form-inline input {
+		margin-bottom: 2rem!important;
+	}
+	.masthead h1 {
+		padding-top: 0!important;
+		font-size: 2.5rem;
+	}
+	.list-item {
+		width: calc(50% - 30px)!important;
+	}
 }
+
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-     .signup-section .form-inline input {
-          margin-bottom: 0rem!important;
-      }
-      .masthead h1 {
-          padding-top: 0!important;
-          font-size: 2.5rem;
-      }
-        .list-item {
-         width: calc(50% - 30px)!important;
-      }
-      .text-beginner-plants {
-          position: relative;
-      }
-      .section-three {
-          padding: 0;
-      }
-      .text-beginner-plants {
-          right: 0px;
-      }
-      .signupmargin {
-          margin-left: auto;
-      }
-      .leafy-bg {
-          background-image: none;
-      }
-      .slideheadtxt {
-          font-size: 1.5rem;
-      }
-      .mastheadlogin {
-          padding: 8rem 0;
-      }
-      .regCol {
-          margin-top: 2rem;
-      }
-      .slideinner {
-margin-left: 0!important;
-margin-right: 0!important;
-      }
-      .slidedescriptor {
-    text-align: center;
-    margin-right: auto;
-    margin-left: 0!important;
-    width: 55%!important;
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+	.signup-section .form-inline input {
+		margin-bottom: 0rem!important;
+	}
+	.masthead h1 {
+		padding-top: 0!important;
+		font-size: 2.5rem;
+	}
+	.list-item {
+		width: calc(50% - 30px)!important;
+	}
+	.text-beginner-plants {
+		position: relative;
+	}
+	.section-three {
+		padding: 0;
+	}
+	.text-beginner-plants {
+		right: 0px;
+	}
+	.signupmargin {
+		margin-left: auto;
+	}
+	.leafy-bg {
+		background-image: none;
+	}
+	.slideheadtxt {
+		font-size: 1.5rem;
+	}
+	.mastheadlogin {
+		padding: 8rem 0;
+	}
+	.regCol {
+		margin-top: 2rem;
+	}
+	.slideinner {
+		margin-left: 0!important;
+		margin-right: 0!important;
+	}
+	.slidedescriptor {
+		text-align: center;
+		margin-right: auto;
+		margin-left: 0!important;
+		width: 55%!important;
+	}
 }
-}
+
+
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 
+
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-       .articleform {
-          padding: 0 10%;
-      }
-      .section-three {
-          padding: 0;
-      }
-      .text-beginner-plants {
-          position: relative;
-          padding-bottom: 4rem;
-          padding-left: 2rem;
-          padding-right: auto;
-      }
-      .section-two {
-          padding-top: 3rem;
-          padding-bottom: 0;
-      }
-      .masthead .container {
-          display: block!important;
-      }
-      .d-flex {
-          display: block!important;
-      }
-      .social {
-          text-align: center;
-      }
-      .signupmargin {
-          margin-left: auto;
-      }
-      .leafy-bg {
-          background-image: none;
-      }
-      .signupbtn {
-          margin-top:3rem;
-      }
-      .section-title, .section-subtitle {
-          padding: 0 10%;
-          margin-bottom: 2rem;
-      }
-      .plantcare-section {
-          margin-top: 7rem;
-      }
-      .care img {
-          max-width: 100%;
-      }
-      .articleform {
-          margin-top: 1rem;
-      }
-      .easyplantlist {
-          margin:0;
-          width: 100%;
-      }
-      .slideheadtxt {
-          text-align: center;
-      }
-      .slideinner {
-          width:100%;
-          margin-right: 0;
-      }
-      .slidedescriptor {
-          text-align: center;
-          width: 90%;
-          margin-left: 1rem;
-          margin-right: auto;
-      }
-      .list-item {
-          width: calc(100% - 8px);
-      }
-      .shop-wrapper {
-          width: 100%;
-          margin-top: 3rem;
-      }
-      .shop-display {
-          padding:0;
-      }
-      .slideinner {
-          width: 50%;
-      }
-       .slideinner {
-margin-left: auto;
-margin-right: auto;
-      }
-      .slidedescriptor {
-    text-align: center;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-      }
-       .yellowimg {
-          margin-left:0.9rem;
-          margin-right: auto;
-      }
-      .list-item{
-          width: calc(50% - 8px);
-    margin-left: 4px;
-    margin-right: 4px;
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+	.articleform {
+		padding: 0 10%;
+	}
+	.section-three {
+		padding: 0;
+	}
+	.text-beginner-plants {
+		position: relative;
+		padding-bottom: 4rem;
+		padding-left: 2rem;
+		padding-right: auto;
+	}
+	.section-two {
+		padding-top: 3rem;
+		padding-bottom: 0;
+	}
+	.masthead .container {
+		display: block!important;
+	}
+	.d-flex {
+		display: block!important;
+	}
+	.social {
+		text-align: center;
+	}
+	.signupmargin {
+		margin-left: auto;
+	}
+	.leafy-bg {
+		background-image: none;
+	}
+	.signupbtn {
+		margin-top: 3rem;
+	}
+	.section-title,
+	.section-subtitle {
+		padding: 0 10%;
+		margin-bottom: 2rem;
+	}
+	.plantcare-section {
+		margin-top: 7rem;
+	}
+	.care img {
+		max-width: 100%;
+	}
+	.articleform {
+		margin-top: 1rem;
+	}
+	.easyplantlist {
+		margin: 0;
+		width: 100%;
+	}
+	.slideheadtxt {
+		text-align: center;
+	}
+	.slideinner {
+		width: 100%;
+		margin-right: 0;
+	}
+	.slidedescriptor {
+		text-align: center;
+		width: 90%;
+		margin-left: 1rem;
+		margin-right: auto;
+	}
+	.list-item {
+		width: calc(100% - 8px);
+	}
+	.shop-wrapper {
+		width: 100%;
+		margin-top: 3rem;
+	}
+	.shop-display {
+		padding: 0;
+	}
+	.slideinner {
+		width: 50%;
+	}
+	.slideinner {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.slidedescriptor {
+		text-align: center;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.yellowimg {
+		margin-left: 0.9rem;
+		margin-right: auto;
+	}
+	.list-item {
+		width: calc(50% - 8px);
+		margin-left: 4px;
+		margin-right: 4px;
+	}
+	.logintitle,
+	.registertitle {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.accountCol {
+		margin-bottom: 2rem;
+	}
+	.mastheadlogin {
+		padding: 11rem 0;
+	}
+	.regCol {
+		margin-top: 0;
+	}
 }
-.logintitle,.registertitle {
-         margin-left: auto;
-         margin-right: auto;
-      }
-      .accountCol {
-          margin-bottom: 2rem;
-      }
-    .mastheadlogin {
-        padding: 11rem 0;
-    }
-    .regCol {
-        margin-top:0;
-    }
-}
+
 
 /* Landscape */
 
-
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-    .masthead h1 {
-        padding-top: 8rem;
-    }
-    .mastheadlogin {
-        padding: 0;
-        padding-top: 9rem;
-    }
-}
-
-/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
+	.masthead h1 {
+		padding-top: 8rem;
+	}
+	.mastheadlogin {
+		padding: 0;
+		padding-top: 9rem;
+	}
 }
 
 
@@ -2389,81 +2262,120 @@ margin-right: auto;
 
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-.signup-section .form-inline input {
-          margin-bottom: 0rem!important;
-      }
-      .masthead h1 {
-          padding-top: 0!important;
-          font-size: 2.5rem;
-      }
-        .list-item {
-         width: calc(50% - 30px)!important;
-      }
-      .text-beginner-plants {
-          position: relative;
-      }
-      .section-three {
-          padding: 0;
-      }
-      .text-beginner-plants {
-          right: 0px;
-      }
-      .signupmargin {
-          margin-left: auto;
-      }
-      .leafy-bg {
-          background-image: none;
-      }
-      .slideheadtxt {
-          font-size: 1.5rem;
-      }
-      .mastheadlogin {
-          padding: 8rem 0;
-      }
-      .regCol {
-          margin-top: 2rem;
-      }
-      .form-inline button {
-          margin-top: 2rem;
-      }
-        .logintitle,.registertitle {
-         margin-left: auto;
-         margin-right: auto;
-      }
-      .yellowimg {
-          /*margin-left: 2.5rem;*/
-          margin-right: auto;
-      }
-      .slideinner {
-margin-left: auto;
-margin-right: auto;
-      }
-      .slidedescriptor {
-    text-align: center;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+	.signup-section .form-inline input {
+		margin-bottom: 0rem!important;
+	}
+	.masthead h1 {
+		padding-top: 0!important;
+		font-size: 2.5rem;
+	}
+	.list-item {
+		width: calc(50% - 30px)!important;
+	}
+	.text-beginner-plants {
+		position: relative;
+	}
+	.section-three {
+		padding: 0;
+	}
+	.text-beginner-plants {
+		right: 0px;
+	}
+	.signupmargin {
+		margin-left: auto;
+	}
+	.leafy-bg {
+		background-image: none;
+	}
+	.slideheadtxt {
+		font-size: 1.5rem;
+	}
+	.mastheadlogin {
+		padding: 8rem 0;
+	}
+	.regCol {
+		margin-top: 2rem;
+	}
+	.form-inline button {
+		margin-top: 2rem;
+	}
+	.logintitle,
+	.registertitle {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.yellowimg {
+		margin-right: auto;
+	}
+	.slideinner {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.slidedescriptor {
+		text-align: center;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.shop-display {
+		padding: 0;
+	}
 }
-.shop-display {
-    padding: 0;
+
+@media (min-width: 576px) {
+	.container {
+		max-width: 540px;
+	}
 }
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 720px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+	}
+}
+
+@media (min-width: 576px) {
+	.container {
+		max-width: 540px;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 720px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+	}
 }
 
 /* Hide signout nav item on Desktop */
+
 @media only screen and (min-width: 981px) {
-    .hide-on-desktop {
-        display: none !important;
-    }
+	.hide-on-desktop {
+		display: none !important;
+	}
 }
-
-
-/*@media only screen and (max-width: 981px) {
-    .hprmobile {
-        display: none !important;
-    }
-}*/

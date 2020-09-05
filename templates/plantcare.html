@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
+      <title>Happy:)Plants</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +17,7 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
    </head>
    <body id="page-plantcare">
-     <nav class="navbar navbar-expand-lg navbar-easycare fixed-top" id="mainNav">
+      <nav class="navbar navbar-expand-lg navbar-easycare fixed-top" id="mainNav">
          <div class="container">
             <a class="js-scroll-trigger navbar-brand-shop"
                href="/">Happy<span class="smiley">☺</span>Plants</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
@@ -42,8 +43,8 @@
          </div>
       </nav>
       <section class="plantcare-section bg-light">
-         <article role="article">
-            <header role="banner">
+         <article>
+            <header>
                <h1 class="section-title text-center">TOP TEN PLANT CARE TIPS</h1>
                <h2 class="section-subtitle text-center">There are plenty of ways to care for your plant. With the help
                   of
@@ -51,7 +52,7 @@
                   we’ve weeded out the Top Ten Tips for <strong class="">healthy</strong>, <strong class="">happy</strong> <strong class="">plants</strong>.
                </h2>
                <div class="care">
-                  <img src="{{ url_for('static', filename='assets/img/plant-care.jpg') }}"> 
+                  <img alt="plants being watered" src="{{ url_for('static', filename='assets/img/plant-care.jpg') }}"> 
                </div>
             </header>
             <div class="articleform leafy-bg">
@@ -255,7 +256,7 @@
             </div>
          </div>
       </section>
-        <!-- Footer-->
+      <!-- Footer-->
       <footer class="footer bg-offwhite small text-center text-black-50">
          <div class="container">Copyright © Happy<span class="smiley">☺</span>Plants 2020</div>
       </footer>
@@ -263,6 +264,6 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
       <script src="{{ url_for('static', filename= 'js/scripts.js') }}"></script>
-      <script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}"></script>
+      <script src="{{ url_for('static', filename = 'js/validateForm.js') }}"></script>
    </body>
 </html>

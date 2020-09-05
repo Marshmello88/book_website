@@ -6,16 +6,16 @@
          <div class="row">
             <div class="col-6 logintitle">
                <h2> Log In </h2>
-               <form class="loginAccount" action="" method="post">
+               <form class="loginAccount" action="/login" method="post">
                   <p class="formRow">
                      <label for="username">Username or email address&nbsp;
                      <span class="required">*</span></label><br>
-                     <input  class="form-control" type="text" class="" name="username" id="username"  value="{{ request.form.username }}">			
+                     <input  class="form-control" type="text" name="username" id="username"  value="{{ request.form.username }}">			
                   </p>
                   <p class="formRow">
                      <label for="password">Password&nbsp;
                      <span class="required">*</span></label> <br>
-                     <input class="form-control" type="password" name="password" value="{{ request.form.password }}"> 
+                     <input class="form-control" id="password" type="password" name="password" value="{{ request.form.password }}"> 
                   </p>
                   <button class="btn btn-default login-button" value="Login" type="submit">Sign in</button> <br> 
                   <p class="join-footer"> New here? <a href="/register">Join</a></p>
@@ -39,9 +39,6 @@
          {% endwith %}
          <!-- UNDER THE FORM - END-->
       </div>
-   </div>
-   </div>
-   </div>
    </div>
 </header>
 <!-- Signup-->

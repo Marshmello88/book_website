@@ -9,25 +9,23 @@
                <form class="registeraccount" action="/register" method="POST" onsubmit="return validate()">
                   <p class="formRow">
                      <label for="username">Username or E-mail&nbsp;<span class="required-reg">*</span></label><br> 
-                     <input class="form-control" type="text" name="username">
-                  </p>
+                     <input class="form-control" type="text" name="username" id="username">
                   </p>
                   <p class="formRow">
-                     <label for="username">Password&nbsp;<span class="required-reg">*</span></label><br>
-                     <input class="form-control" type="password" name="password" id="password" class="required-reg">
+                     <label for="password">Password&nbsp;<span class="required-reg">*</span></label><br>
+                     <input class="form-control" type="password" name="password" id="password">
                   </p>
                   <p class="formrow">
-                     <label for="username">Confirm Password&nbsp;<span class="required-reg">*</span></label><br> 
-                     <input class="form-control" type="password" name="cpassword" id="cpassword"></br>
+                     <label for="cpassword">Confirm Password&nbsp;<span class="required-reg">*</span></label><br> 
+                     <input class="form-control" type="password" name="cpassword" id="cpassword"><br>
                      <button class="btn btn-default login-button" value="Register" type="submit">Register</button> <br> 
                   </p>
                   <p> Or you can <a href="/login">Log in here</a></p>
+               </form>
             </div>
          </div>
       </div>
-      </form>
    </div>
-   </section>
    <!-- Signup-->
    <section class="signup-section" id="signup">
       <div class="container">
@@ -44,45 +42,45 @@
    </section>
    <!-- Contact-->
    <section class="contact-section bg-offwhite">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-               <div class="card-body text-center">
-                  <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                  <h4 class="text-uppercase m-0">Address</h4>
-                  <hr class="my-4" />
-                  <div class="small text-black-50">2034LP Street XXX Amsterdam</div>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4 mb-3 mb-md-0">
+               <div class="card py-4 h-100">
+                  <div class="card-body text-center">
+                     <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                     <h4 class="text-uppercase m-0">Address</h4>
+                     <hr class="my-4" />
+                     <div class="small text-black-50">2034LP Street XXX Amsterdam</div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+               <div class="card py-4 h-100">
+                  <div class="card-body text-center">
+                     <i class="fas fa-envelope text-primary mb-2"></i>
+                     <h4 class="text-uppercase m-0">Email</h4>
+                     <hr class="my-4" />
+                     <div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+               <div class="card py-4 h-100">
+                  <div class="card-body text-center">
+                     <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                     <h4 class="text-uppercase m-0">Phone</h4>
+                     <hr class="my-4" />
+                     <div class="small text-black-50">+31624159080</div>
+                  </div>
                </div>
             </div>
          </div>
-         <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-               <div class="card-body text-center">
-                  <i class="fas fa-envelope text-primary mb-2"></i>
-                  <h4 class="text-uppercase m-0">Email</h4>
-                  <hr class="my-4" />
-                  <div class="small text-black-50"><a href="#!">m.neibauere@gmail.com</a></div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-               <div class="card-body text-center">
-                  <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                  <h4 class="text-uppercase m-0">Phone</h4>
-                  <hr class="my-4" />
-                  <div class="small text-black-50">+31624159080</div>
-               </div>
-            </div>
+         <div class="social d-flex justify-content-center">
+            <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
+               href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
+               href="#!"><i class="fab fa-github"></i></a>
          </div>
       </div>
-      <div class="social d-flex justify-content-center">
-         <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2"
-            href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2"
-            href="#!"><i class="fab fa-github"></i></a>
-      </div>
-   </div>
-   </div>
+   </section>
 </header>
 {% endblock %}
