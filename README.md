@@ -115,8 +115,8 @@ I went through the following steps:
 
 # Demo
 
-![front page](img/Capture.jpg?raw=true)
-![shop display](/static/assets/img/Capture2.jpg?raw=true)
+![front page](/img/Capture.jpg?raw=true)
+![shop display](/assets/img/Capture2.jpg?raw=true)
 
 
 # Wireframes
@@ -128,7 +128,7 @@ the cart follow pretty basic schematics.
 
 ![front page](assets/img/wireframes_shop.jpg?raw=true)
 
-#Testing
+# Testing
 
 I have used the following validation services to check the validity of my code:
 
@@ -279,7 +279,7 @@ Does the cart display a message for when a cart is empty?
 This feature hasn't been added yet but is of course useful to add in the future as it would communicate
 a message to the user that the cart is empty. 
 
-#Deployment to Heroku
+# Deployment to Heroku
 
 Steps to take:
 
@@ -293,7 +293,7 @@ Steps to take:
 
 - In heroku dashboard select the master branch then click "Deploy Branch".
 
-#Media
+# Media
 
 I do not own the media used in this project. I also did not write any of the material listed on this website.
 
