@@ -1,14 +1,14 @@
-#E-commerce Plant Webshop
+# E-commerce Plant Webshop
 
 For Codeinstitute's Data Centric Development Milestone Project.
 
 
-#Main Technologies used:
+# Main Technologies used:
 
  HTML, CSS, JavaScript, Python+Flask, MongoDB
 
 
-#Requirements for the project:
+# Requirements for the project:
 
 - Data handling: Build a MongoDB-backed Flask project for a web application that allows users to store and manipulate 
 data records about a particular domain. 
@@ -36,7 +36,7 @@ dependencies) in the README.
 
 - Make sure to not include any passwords or secret keys in the project repository.
 
-#UX
+# UX
 
 The central target audience for HappyPlants are people who want to buy plants or people in search of gifts. 
 These are people of all ages. User goals are the following:
@@ -62,7 +62,7 @@ the user to navigate. However in the future I would also like to add more produc
 
 
 
-#Shopping cart requirements + setup
+# Shopping cart requirements + setup
 
 
 First thing I did was plan the data structure for the cart and figure out how I was going to save it.  
@@ -98,7 +98,7 @@ I went through the following steps:
 7. I loop through each cart item, and fetch the prodct using `.find_one` with the product id.
 
 
-#Stuff to add in the future
+# Stuff to add in the future
 
 - add a search function
 
@@ -113,13 +113,13 @@ I went through the following steps:
 - allow users to buy without logging in
 
 
-#Demo
+# Demo
 
 ![front page](img/Capture.jpg?raw=true)
-![shop display](/assets/img/Capture2.jpg?raw=true)
+![shop display](static/assets/img/Capture2.jpg?raw=true)
 
 
-#Wireframes
+# Wireframes
 
 These wireframes were drawn up by hand during the initital stages of the planning process. Since I mostly 
 relied on a bootstrap theme for my homepage, most of the blueprint was already taken care of. The shop and 
