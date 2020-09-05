@@ -115,8 +115,8 @@ I went through the following steps:
 
 # Demo
 
-![front page](/staticassets/img/Capture.JPG?raw=true)
-![shop display](static/assets/img/Capture2.JPGraw=true)
+![front page](/static/assets/img/Capture.JPG?raw=true)
+![shop display](static/assets/img/Capture2.JPG?raw=true)
 
 
 # Wireframes
@@ -126,7 +126,6 @@ relied on a bootstrap theme for my homepage, most of the blueprint was already t
 the cart follow pretty basic schematics.
 
 
-![front page](static/assets/img/wireframes_shop.jpg?raw=true)
 ![front page](/static/assets/img/wireframes_shop.jpg?raw=true)
 
 
