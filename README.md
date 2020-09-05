@@ -115,8 +115,8 @@ I went through the following steps:
 
 # Demo
 
-![front page](img/Capture.jpg?raw=true)
-![shop display](static/assets/img/Capture2.jpg?raw=true)
+![front page](/img/Capture.jpg)
+![shop display](/assets/img/Capture2.jpg)
 
 
 # Wireframes
@@ -127,6 +127,7 @@ the cart follow pretty basic schematics.
 
 
 ![front page](assets/img/wireframes_shop.jpg?raw=true)
+![front page](assets/img/wireframes_shop.jpg)
 
 # Testing
 
