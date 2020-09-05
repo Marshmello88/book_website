@@ -115,8 +115,8 @@ I went through the following steps:
 
 # Demo
 
-![front page](/img/Capture.jpg)
-![shop display](/assets/img/Capture2.jpg)
+![front page](../img/Capture.JPG?raw=true)
+![shop display](/assets/img/Capture2.JPG)
 
 
 # Wireframes
