@@ -11,7 +11,6 @@ for k, v in os.environ.items():
 
 app = Flask(__name__) 
 app.config["MONGO_DBNAME"] = 'plantstoreDB'
-#app.config["MONGO_URI"] = 'mongodb+srv://marshmello88:Thecharlie88@plantcluster.nhl30.mongodb.net/plantstoreDB?retryWrites=true&w=majority'
 app.config["MONGO_URI"] = os.environ['MONGO_URI']
 
 
@@ -26,6 +25,7 @@ def index():
 def plantsforbeginners():
     return render_template('plantsforbeginners.html')
 
+# Route for handling the login page logic https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'GET':
@@ -39,7 +39,6 @@ def login():
         user_id = str(login_user["_id"])
         if bcrypt.checkpw(request.form['password'].encode('utf-8'), login_user['password']):
           session['username'] = request.form['username']
-          #session["user_id"] = login_user[user_id]
           print(session, "+++++++++++session")
           flash('You were successfully logged in', 'message') 
           return redirect(url_for('index'))
@@ -57,11 +56,9 @@ def register():
       if request.form['password'] != request.form['cpassword']:
         flash('Passwords are not the same', 'error') 
         render_template('register.html')
-
       else:
         users = mongo.db.users
         existing_user = users.find_one({'name' : request.form['username']}) # search within collection users whether there is no double
-        
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'),bcrypt.gensalt() ) #not storing plaintext but storing hash version of it so more secure
             users.insert({'name' : request.form['username'], 'password' : hashpass}) #insert everything to users collection
@@ -69,9 +66,7 @@ def register():
             return redirect(url_for('login'))
         else: 
           flash('That username already exists', 'error') 
-
     return render_template('register.html')
-
 
 
 @app.route("/logout")
@@ -102,15 +97,12 @@ def shop():
 # shopping cart
 @app.route("/cart", methods=['GET', 'POST', 'PUT'])
 def shopping_cart():
-    print(request.method, "++++++++++++++++++++")
     user = session.get("username")
     if not user:
         flash("Please login to view your cart", 'message')
         return redirect(url_for("login"))
     if request.method == 'GET':
         all_products = []
-    #db.collection.find(query, projection) Former specifies selection filter, latter specifies the fields to return in the documents that match the query filter. 
-    #Selects documents in a collection or view and returns a cursor to the selected documents.
     #retrieve the user from cart collection:
         user_cart = mongo.db.cart.find({"action": user}) 
     #loop through each cart item, fetch product with find_one
@@ -118,31 +110,17 @@ def shopping_cart():
             cart_product = mongo.db.catalogue.find_one({"_id": ObjectId(oid=str(product["product_id"]))})
             cart_product["quantity"] = int(product["quantity"])
             all_products.append(cart_product)
-        #print(all_products, "+++++all products in cart")
-    # check if the user is in session 
-    # get the users cart
-    # pass it to render template
-
         return render_template("cart.html", products=all_products)
-    #Pass request for the product the user wants to delete
     if request.method == 'POST':
-        #request gets the value from form (get quantity)
-        #124 if it doesnt have quantity >> delete and remove product id
-        #128 finds product id >> tries to update and sets quantity to the new quantity 
         req = request.form.to_dict()
-        print(req, user, "**********")
         quantity = req.get("quantity")
         product_id = request.args.get('product_id')
-        print(product_id, "+++++++++++++product", quantity)
         if not quantity:
-            print(product_id, "+++++++++++++query")
             mongo.db.cart.delete_one({"action": user, "product_id": product_id})
             return redirect(url_for('shopping_cart'))
-            
-        mongo.db.cart.update_one({"product_id": product_id, "action": user}, {"$set": {"quantity": quantity}}) #set does the actual updating, set the quantity to a particular value
+        mongo.db.cart.update_one({"product_id": product_id, "action": user}, {"$set": {"quantity": quantity}}) #set does the updating, set the quantity to a particular value
         flash('Your cart was updated', 'message')
         return redirect(url_for('shopping_cart'))
-    #update quantity
 
    
  
@@ -152,30 +130,23 @@ def add_cart():
     #fetch user_id from session
     #insert username into cart collection through name attribute
     #to fetch items of the cart collection:  mongodb '.find({user_id:...})' 
-    #print(request.form)
-    #user = session["username"] #fetch user from session
     user = session.get("username")
     if not user:
         flash("Please login in order to make a purchase", 'message')
         return redirect(url_for("login"))
-    print(user, "++++++++++++logged in user")
     cart_request = request.form.to_dict() #returns a dictionary
-    #print(cart_request["product_id"])
     product = mongo.db.cart.find_one({"product_id": cart_request["product_id"], "action": user}) # fetch items of the cart collection
     if product is None:
         flash("Item(s) added to cart", 'message')
     if product:
-        print(product, "++++++++++++PRODUCT")
         flash('Already added to cart', 'message')
         return redirect(url_for('shop')) 
-    cart_request['action'] = user #add to a dictionary by specifying the key and value (['key'] = value )
-    #print(cart_request, "+++++++++cart")
+    cart_request['action'] = user 
     cart = mongo.db.cart 
     cart.insert_one(cart_request)
     return redirect(url_for('shop'))
  
 
-# Route for handling the login page logic https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

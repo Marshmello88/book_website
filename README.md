@@ -54,11 +54,11 @@ check out yet.
 
 The palette for HappyPlants is all about color. The blues, yellows, and greens are bright, playful, and tie directly 
 into products and are used consistently throughout the entire website. I think this type of color-scheme 
-stands out and can help a website to capture the viewers attention. 
-Because the color palette by itself, already creates a strong visual impact I have tried to keep the rest of 
-the web design clean and minimalistic. The main brand color is turqoise and all the complementary shades were chosen
-through adobe colorwheel. The information/products presented on the webpage are laid out in a way that are easy for 
-the user to navigate. However in the future I would also like to add more product details.
+stands out and can help a website to capture the viewers attention. Because the color palette by itself, already creates a 
+strong visual impact I have tried to keep the rest of the web design clean and minimalistic. The main brand color is turqoise and 
+all the complementary shades were chosen through adobe colorwheel. The information/products presented on the webpage are laid out 
+in a way that are easy for the user to understand/navigate. There are however some limitations with regards to how quick 
+a user can navigate the webshop, e.g. there is no search bar. It's definitely a must-have feature and will be implemented in the future.
 
 
 
@@ -98,19 +98,25 @@ I went through the following steps:
 7. I loop through each cart item, and fetch the prodct using `.find_one` with the product id.
 
 
-# Stuff to add in the future
+# Things to add in the future
 
-- add a search function
+- Add a search function. If more products keep being added and a webshop becomes too large, a search bar will allow users to find 
+what they’re looking for quickly. 
 
-- add a filter function (based on names/preferences/difficulty etc)
+- Add a filter function (based on names/preferences/difficulty/toxicity etc). Product filtering will help visitors narrow in on the 
+specific product they're looking for and find products they might be interested in based on certain features. 
 
-- add a quiz
+- Add a quiz. This could be a fun feature to add and a good way for people to find out which plant to buy based on their
+needs/experience/light/humidity conditions at home etc.
 
-- add a page for every plant with accurate description
+- Add a page for every plant with accurate description. A product detail page is where a visitor will determine whether to purchase 
+the plant or not. So it obviously should have detailed, benefit-focused information about the plant. Adding some alternative suggestions
+would also be a nice feature. 
 
-- allow users to process payment 
+- Allow users to process payment. 
 
-- allow users to buy without logging in
+- Allow users to buy without logging in/registering. Currently the webshop requires the user to log in to be able to add items to the cart, 
+which it's not the most user friendly method.
 
 
 # Demo
@@ -170,7 +176,7 @@ Does the home page behave responsively when viewed on all* screen sizes?
 - Yes/Pass
 
 Note*: "All" in this context means the screen sizes that I tested on, which are: Laptop with MDPI screen iPhone 6/7/8,
-iPhone X, iPad, iPad Pro, iPhone 6/7/8 plus. Overall the landscape mode across all devices (except for iPads) lacks 
+iPhone X, iPad, iPad Pro, iPhone 6/7/8 plus. At the moment the landscape mode across all devices (except for iPads) lacks 
 uniformity, as I was focused mainly on re-positioning "stray" html elements. Furthermore, iPad Pro portrait mode, was
 not made responsive due to time constraints. This also applies to all of the questions below. The best way to view the 
 website is with the laptop MPDI screen. 
@@ -227,6 +233,8 @@ Does a "sign out" option appear in a drop down menu?
 
 -Yes/Pass
 
+IV. THE SHOP
+
 Can a user add items to cart and does a flash message "Item(s) added to cart" appear when an item is added?
 
 Yes/Pass
@@ -239,7 +247,7 @@ At this stage it's only possible to select a quantity and add it to the cart onl
 A user CAN however edit the amount of a given item in the cart page. When deleted from the cart, the user can then
 re-add the item from the shop again.
 
-IV. THE CART
+V. THE CART
 
 Does the cart display all the items added by a user?
 
@@ -271,14 +279,13 @@ Can a user add an item to the cart without logging in?
 
 At this stage a user can only purchase an item when the user is logged in. This obviously diminishes 
 the quality of the user's interaction with the webshop, so in do intend to add the option to buy without
-having to register the future.
+having to register in the future.
 
 Does the cart display a message for when a cart is empty?
 
 -No
 
-This feature hasn't been added yet but is of course useful to add in the future as it would communicate
-a message to the user that the cart is empty. 
+This feature hasn't been added yet. Obviously a message should be added to communicate to the user that their cart is empty. 
 
 # Deployment to Heroku
 
