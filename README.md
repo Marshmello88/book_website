@@ -301,6 +301,8 @@ Steps to take:
 
 - In heroku dashboard select the master branch then click "Deploy Branch".
 
+- Link Heroku app to a GitHub repo. You can selectively deploy from branches or configure auto-deploys.
+
 # Media
 
 I do not own the media used in this project. I also did not write any of the material listed on this website.
