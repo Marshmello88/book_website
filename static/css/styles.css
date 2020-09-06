@@ -58,7 +58,7 @@ body {
 	color: #000000;
 	display: none;
 	position: absolute;
-	min-width: 170px;
+	min-width: 100%;
 	z-index: 1;
 	padding: 1.5rem 1rem;
 }
