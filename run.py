@@ -130,7 +130,7 @@ def shopping_cart():
         #124 if it doesnt have quantity >> delete and remove product id
         #128 finds product id >> tries to update and sets quantity to the new quantity 
         req = request.form.to_dict()
-        print(req, "**********")
+        print(req, user, "**********")
         quantity = req.get("quantity")
         product_id = request.args.get('product_id')
         print(product_id, "+++++++++++++product", quantity)
@@ -138,12 +138,11 @@ def shopping_cart():
             print(product_id, "+++++++++++++query")
             mongo.db.cart.delete_one({"action": user, "product_id": product_id})
             return redirect(url_for('shopping_cart'))
-        mongo.db.cart.update_one({"product_id": product_id}, {"$set": {"quantity": quantity}})
+            
+        mongo.db.cart.update_one({"product_id": product_id, "action": user}, {"$set": {"quantity": quantity}}) #set does the actual updating, set the quantity to a particular value
         flash('Your cart was updated', 'message')
         return redirect(url_for('shopping_cart'))
     #update quantity
-        #user_cart = mongo.db.cart.find({"action": user}) 
-        #product = mongo.db.cart.find_one({"product_id": cart_request["product_id"], "action": user})
 
    
  

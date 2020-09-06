@@ -1,6 +1,8 @@
 /*@charset "UTF-8";*/
 /* Sources:
-Larger dependency Bootstrap Theme: Grayscale v6.0.1 (https://startbootstrap.com/themes/grayscale) 
+Larger dependency for landing page + navigation bar: Bootstrap Theme Grayscale v6.0.1 (https://startbootstrap.com/themes/grayscale) 
+
+Other sources: 
 www.plantsome.nl
 https://www.thesill.com
 https://www.housebeautiful.com/lifestyle/gardening/g31355906/easy-low-maintenance-plants/ */
@@ -1062,38 +1064,6 @@ a.text-color:focus {
 	border-radius: .25rem;
 }
 
-/*alert-dismissible .close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: .75rem 1.25rem;
-	color: inherit;
-}*/
-
-/*.close {
-	float: right;
-	font-size: 1.5rem;
-	font-weight: 700;
-	line-height: 1;
-	color: #000;
-	text-shadow: 0 1px 0 #fff;
-	opacity: .5;
-}*/
-
-/*button.close {
-	padding: 0;
-	background-color: transparent;
-	border: 0;
-	-webkit-appearance: none;
-}*/
-
-/*#close:hover {
-	float: right;
-	display: inline-block;
-	padding: 2px 5px;
-	background: #ccc;
-	color: #fff;
-}*/
 
 .alert.message {
 	color: #155724;
@@ -1216,7 +1186,6 @@ a.text-color:focus {
 	margin-top: 80px;
 	margin-left: auto;
 	margin-right: auto;
-	/*width: 100%;*/
 	width: calc(100% - 80px);
 	max-width: 1150px;
 	position: relative;
@@ -1300,58 +1269,6 @@ a.text-color:focus {
 	display: flex !important;
 }
 
-/*.text-block {
-	z-index: 2;
-	line-height: 1.5;
-	font-size: 2.5rem;*/
-	/*font-family: "grad", serif;*/
-	/*padding: 0 3rem;
-	text-align: center;
-	max-width: 1200px;
-	margin: 3rem auto 4rem auto;
-	margin-bottom: 4rem;
-}*/
-
-/*.text-container {
-	position: relative;
-	z-index: 2;
-	/*remove this to recenter the text*/
-	/*max-width: 540px;
-height: 500px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-}*/
-
-/*.page-separator {
-	border-top: solid black 2px;
-	width: calc(100% - 80px);
-	margin-left: auto;
-	margin-right: auto;
-}*/
-
-
-/*.block-picture {
-    width: 75%;
-    height: 490px;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    right: 0;
-    top: 0%;
-    top: 2%;
-    z-index: 0;
-    background-blend-mode: multiply;
-
-}*/
-
-/*.text-block p strong {
-	font-weight: inherit;
-	background-image: linear-gradient(to right, rgb(203, 255, 15) 100%, transparent 100%);
-	background-position: 0px 0.71em;
-	background-repeat: repeat-x;
-	background-size: 1em 0.25em;
-}*/
 
 .smiley {
 	font-size: 30px;
@@ -1385,7 +1302,7 @@ justify-content: center;
 	margin-left: 5rem;
 }
 
-.product-grid-item__header .subtitle {
+.productgrid-itemheader .subtitle {
 	width: calc(100% + 60px);
 	display: block;
 }
@@ -1398,51 +1315,6 @@ justify-content: center;
 	padding: 11px 20px;
 }
 
-/*.easycare-items {
-	width: calc(66.666% - 30px);
-	position: relative;
-	height: 540px;
-	margin-bottom: 15px;
-	margin-top: 15px;
-	margin-left: 15px;
-	margin-right: 15px;
-	background-color: #afcecd;
-}*/
-
-/*.petfriendly-item {
-	position: relative;
-	width: calc(33.333% - 30px);
-	height: 540px;
-	margin-bottom: 15px;
-	margin-top: 15px;
-	margin-left: 15px;
-	margin-right: 15px;
-	background-color: #afcecd;
-}*/
-
-/*.petplant-image img {
-	max-height: 95%;
-	max-width: 100%;
-	justify-content: center;
-	object-fit: cover;
-}*/
-
-/*.easycare-content {
-	position: absolute;
-	width: calc(100% - 16px);
-	bottom: 8px;
-	left: 0;
-	margin-left: 8px;
-	margin-bottom: -8px;
-	display: flex;
-	flex-flow: column;
-}*/
-
-/*.easycare-item-img img {
-	width: 100%;
-	object-fit: contain;
-	vertical-align: middle;
-}*/
 
 .text-beginner-plants {
 	position: absolute;
@@ -1454,7 +1326,6 @@ justify-content: center;
 #plant-packs {
 	padding: 0;
 }
-
 
 /* *********************************plant care page******************************** */
 
@@ -1515,12 +1386,6 @@ justify-content: center;
 	margin-bottom: 4rem;
 }
 
-/*.extrastrong {
-	background-image: linear-gradient(to right, rgb(198, 217, 169) 100%, transparent 100%);
-	background-position: 0px 0.71em;
-	background-repeat: repeat-x;
-	background-size: 1em 0.25em;
-}*/
 
 .leafy-bg {
 	background-image: url("../assets/img/leafy-bg-2.png"), url("../assets/img/bg-leaf.png");
@@ -1553,16 +1418,6 @@ justify-content: center;
 	overflow: auto;
 }
 
-/*#btnEmpty {
-	background-color: #ffffff;
-	border: #d00000 1px solid;
-	padding: 5px 10px;
-	color: #d00000;
-	float: right;
-	text-decoration: none;
-	border-radius: 3px;
-	margin: 10px 0px;
-}*/
 
 .tbl-cart {
 	font-size: 0.9em;
@@ -1655,10 +1510,6 @@ justify-content: center;
 	float: right;
 	border: 0;
 	border-radius: 15px;
-	/*font-size: 18px;
-	background-color: #64a19d;
-	color: #fff;
-	padding: 11px 20px;*/
 	color: #fff;
 	padding: 11px 20px;
 	padding-bottom: 10px;
@@ -1759,15 +1610,6 @@ justify-content: center;
 	margin: 0 0 32px;
 }
 
-/*.total-amount-text {
-	font-size: 1.25rem;
-	font-weight: 700;
-	float: left;
-	width: 89%;
-	text-align: right;
-	margin: 2px 0 0;
-}*/
-
 
 /* **************** Plants for beginners ************ */
 
@@ -1848,89 +1690,6 @@ justify-content: center;
 
 /* ********************** QUERIES ********************* */
 
-
-/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
-
-
-/* Portrait and Landscape */
-
-/*@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-	.articleform {
-		padding: 0 10%;
-	}
-	.section-three {
-		padding: 0;
-	}
-	.text-beginner-plants {
-		position: relative;
-		padding-bottom: 4rem;
-		padding-left: 2rem;
-		padding-right: auto;
-	}
-	.section-two {
-		padding-top: 3rem;
-		padding-bottom: 0;
-	}
-	.masthead .container {
-		display: block!important;
-	}
-	.masthead h1 {
-		font-size: 1.5rem;
-	}
-	.d-flex {
-		display: block!important;
-	}
-	.social {
-		text-align: center;
-	}
-	.signupmargin {
-		margin-left: auto;
-	}
-	.leafy-bg {
-		background-image: none;
-	}
-	.section-title,
-	.section-subtitle {
-		padding: 0 10%;
-		margin-bottom: 2rem;
-	}
-	.plantcare-section {
-		padding-top: 0;
-	}
-	.care img {
-		max-width: 100%;
-	}
-	.articleform {
-		margin-top: 1rem;
-	}
-	.easyplantlist {
-		margin: 0;
-		width: 100%;
-	}
-	.slideheadtxt {
-		text-align: center;
-	}
-	.slideinner {
-		width: 100%;
-		margin-right: 0;
-	}
-	.slidedescriptor {
-		text-align: center;
-		width: 90%;
-		margin-left: 1rem;
-		margin-right: auto;
-	}
-	.list-item {
-		width: calc(100% - 8px);
-	}
-	.shop-wrapper {
-		width: 100%;
-		margin-top: 3rem;
-	}
-	.shop-display {
-		padding: 0;
-	}
-}*/
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
@@ -2171,7 +1930,7 @@ justify-content: center;
 		margin-bottom: 2rem;
 	}
 	.plantcare-section {
-		margin-top: 7rem;
+		margin-top: 0em;
 	}
 	.care img {
 		max-width: 100%;
@@ -2255,6 +2014,9 @@ justify-content: center;
 		padding: 0;
 		padding-top: 9rem;
 	}
+    .cart-content {
+        padding-top: 7rem;
+    }
 }
 
 
