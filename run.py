@@ -12,6 +12,7 @@ for k, v in os.environ.items():
 app = Flask(__name__) 
 app.config["MONGO_DBNAME"] = 'plantstoreDB'
 app.config["MONGO_URI"] = os.environ['MONGO_URI']
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 mongo = PyMongo(app)
